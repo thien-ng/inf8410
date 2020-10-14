@@ -1,0 +1,223 @@
+@prefix : <example.org/> .
+@prefix p: <http://example.org/properties#> .
+@prefix vg: <http://example.org/video/games#> .
+@prefix schema: <https://schema.org/docs/schema.html> .
+@prefix db: <http://example-database.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+#########################
+Countries
+#########################
+
+db:Japan a schema:Country ;
+        rdfs:label "Japan" ;
+        rdfs:comment "Japan is an island country in East Asia located in the northwest Pacific Ocean".
+db:China a schema:Country ;
+        rdfs:label "China" ;
+        rdfs:comment "China is a country in East Asia".
+db:United_States a schema:Country ;
+        rdfs:label "United States" ;
+        rdfs:comment "The United States of America is a country primarily located in central North America, between Canada and Mexico".
+
+
+
+#########################
+Corporations
+#########################
+
+db:Tencent_Games a schema:Corporation ;
+	             rdfs:label "Tencent Games" ;
+                 rdfs:comment "Tencent is a Chinese multinational technology conglomerate holding company";
+                 p:url "https://www.tencent.com/";
+	             schema:countryOfOrigin db:China .
+
+db:Sony a schema:Corporation ;
+	    rdfs:label "Sony Interactive Entertainment" ;
+        rdfs:comment "Sony Interactive Entertainment is a multinational video game and digital entertainment company.";
+        p:url "https://www.sie.com/en/index.html";
+	    schema:countryOfOrigin db:Japan .
+
+db:Apple a schema:Corporation ;
+	     rdfs:label "Apple" ;
+         rdfs:comment "Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops and sells consumer electronics, computer software, and online services.";
+         p:url "https://www.apple.com/";
+	     schema:countryOfOrigin db:United_States .
+
+db:EA a schema:Corporation ;
+	     rdfs:label "Electronic Arts" ;
+         rdfs:comment "Electronic Arts Inc. (EA) is an American video game company headquartered in Redwood City, California.";
+         p:url "https://www.ea.com/";
+	     schema:countryOfOrigin db:United_States .
+
+#########################
+Controllers
+#########################
+
+db:gamepads a vg:Controller ;
+            rdfs:label "gamepads" .
+db:joysticks a vg:Controller ;
+            rdfs:label "joysticks" .
+db:touchscreen a vg:Controller ;
+            rdfs:label "touchscreen" .
+db:motion_sensor a vg:Controller ;
+            rdfs:label "motion sensor" .
+
+
+
+#########################
+Game intentions
+#########################
+
+db:casual_gaming a db:Intention .
+db:educational_gaming a db:Intention .
+db:serious_gaming a db:Intention .
+
+
+
+#########################
+Game media
+#########################
+
+db:physical a vg:Game_media ;
+	p:type db:downloadable_content .
+db:digital a db:game_media ;
+	p:type (db:CD db:flash_memory) .
+
+
+
+#########################
+Game consoles
+#########################
+
+vg:Console rdfs:subClassOf vg:Platform .
+
+db:Xbox_One a vg:Console ;
+	p:hasGame (
+	[ rdfs:label "Halo Wars 2" ; p:year "2017"^^xsd:gYear ] 
+	[ rdfs:label "Gears of War 4" ; p:year "2016"^^xsd:gYear] 
+    ).
+
+db:Playstation5 a vg:Console ;
+	p:hasGame (
+	[ rdfs:label "Marvel's Spider-Man: Miles Morales" ; p:year "2020"^^xsd:gYear ] 
+	[ rdfs:label "Demon’s Souls" ; p:year "2020"^^xsd:gYear] 
+).
+
+db:PC a vg:Console ;
+	p:hasGame (
+	[ rdfs:label "RuneScape" ; p:year "2001"^^xsd:gYear ] 
+	[ rdfs:label "MapleStory" ; p:year "2003"^^xsd:gYear] 
+).
+
+db:Switch a vg:Console ;
+	p:hasGame (
+	[ rdfs:label "Animal Crossing: New Horizons" ; p:year "2020"^^xsd:gYear ] 
+	[ rdfs:label "Pokémon Sword and Shield" ; p:year "2019"^^xsd:gYear] 
+).
+
+db:Mobile a vg:Console ;
+	p:hasGame (
+	[ rdfs:label "Candy Crush Saga" ; p:year "2012"^^xsd:gYear ] 
+	[ rdfs:label "Flappy Bird" ; p:year "2013"^^xsd:gYear] 
+).
+
+
+
+#########################
+Game streaming platforms
+#########################
+
+vg:Streaming_platform rdfs:subClassOf vg:Platform .
+
+db:Youtube a vg:Streaming_platform ;
+	p:url "https://www.youtube.com/" .
+db:Twitch a vg:Streaming_platform ;
+	p:url "https://www.twitch.tv/" .
+db:Mixer a vg:Streaming_platform ;
+	p:url "https://www.facebook.com/gaming/browse/games" .
+
+p:url rdfs:range db:URL .
+
+#########################
+Player Modes
+#########################
+
+db:Multiplayer a vg:Player_Mode .
+db:SingplePlayer a vg:Player_Mode .
+db:Coop a vg:Player_Mode .
+
+
+
+#########################
+View Modes
+#########################
+
+db:Top_Down a vg:View_Mode .
+db:Side_Scroller a vg:View_Mode .
+db:First_Person a vg:View_Mode .
+db:Third_Person a vg:View_Mode .
+
+
+
+#########################
+Genres
+#########################
+
+db:Survival a vg:Genre .
+db:Platformer a vg:Genre .
+db:Shooter a vg:Genre .
+db:Metroidvania a vg:Genre .
+
+#########################
+People
+#########################
+
+vg:Creator rdfs:subClassOf foaf:Person .
+db:Developer a vg:Creator .
+db:GameDesigner a vg:Creator .
+db:SoundProducer a vg:Creator .
+
+
+vg:User rdfs:subClassOf foaf:Person .
+
+db:Casual_User a vg:User .
+db:Hardcore_User a vg:User .
+db:Professional_User a vg:User .
+
+
+
+#########################
+Conferences
+#########################
+
+db:E3 a vg:Conference ;
+    rdfs:label "Electronic Entertainment Expo" ;
+    p:next_date "2021-06-15"^^xsd:date .
+db:Dream_Hack a vg:Conference ;
+    rdfs:label "DreamHack" ;
+    p:next_date "2020-11-26"^^xsd:date .
+db:GDC a vg:Conference .
+    rdfs:label "Game Developers Conference" ;
+    p:next_date "2021-06-19"^^xsd:date .
+
+
+#########################
+Object Properties
+#########################
+// TODO
+p: url a owl:ObjectProperty;
+    
+
+#########################
+Video game
+#########################
+
+vg:Video_Game p:publishedBy db:Tencent_Games .
+vg:Video_Game p:publishedBy db:Sony .
+vg:Video_Game p:publishedBy db:Apple .
+
+vg:Video_Game p:developedBy db:Electr .
+vg:Video_Game p:developedBy db:Sony .
+vg:Video_Game p:developedBy db:Apple .
+
