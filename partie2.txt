@@ -12,13 +12,13 @@
 # Countries
 #########################
 
-db:Japan a schema:Country ;
+:Japan a schema:Country ;
         rdfs:label "Japan" ;
         rdfs:comment "Japan is an island country in East Asia located in the northwest Pacific Ocean".
-db:China a schema:Country ;
+:China a schema:Country ;
         rdfs:label "China" ;
         rdfs:comment "China is a country in East Asia".
-db:United_States a schema:Country ;
+:United_States a schema:Country ;
         rdfs:label "United States" ;
         rdfs:comment "The United States of America is a country primarily located in central North America, between Canada and Mexico".
 
@@ -27,25 +27,25 @@ db:United_States a schema:Country ;
 # Corporations
 #########################
 
-db:Tencent_Games a schema:Corporation ;
+:Tencent_Games a schema:Corporation ;
 	             rdfs:label "Tencent Games" ;
                  rdfs:comment "Tencent is a Chinese multinational technology conglomerate holding company";
                  p:url "https://www.tencent.com/";
 	             schema:countryOfOrigin db:China .
 
-db:Sony a schema:Corporation ;
+:Sony a schema:Corporation ;
 	    rdfs:label "Sony Interactive Entertainment" ;
         rdfs:comment "Sony Interactive Entertainment is a multinational video game and digital entertainment company.";
         p:url "https://www.sie.com/en/index.html";
 	    schema:countryOfOrigin db:Japan .
 
-db:Apple a schema:Corporation ;
+:Apple a schema:Corporation ;
 	     rdfs:label "Apple" ;
          rdfs:comment "Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops and sells consumer electronics, computer software, and online services.";
          p:url "https://www.apple.com/";
 	     schema:countryOfOrigin db:United_States .
 
-db:EA a schema:Corporation ;
+:EA a schema:Corporation ;
 	     rdfs:label "Electronic Arts" ;
          rdfs:comment "Electronic Arts Inc. (EA) is an American video game company headquartered in Redwood City, California.";
          p:url "https://www.ea.com/";
@@ -55,16 +55,16 @@ db:EA a schema:Corporation ;
 # Controllers
 #########################
 
-db:gamepads a vg:Controller ;
+:gamepads a vg:Controller ;
             rdfs:label "gamepads";
 			rdfs:comment "A gamepad, is a type of game controller held in two hands, where the fingers (especially thumbs) are used to provide input" .
-db:joysticks a vg:Controller ;
+:joysticks a vg:Controller ;
             rdfs:label "joysticks" ;
 			rdfs:comment "A joystick is an input device consisting of a stick that pivots on a base and reports its angle or direction to the device it is controlling".
-db:touchscreen a vg:Controller ;
+:touchscreen a vg:Controller ;
             rdfs:label "touchscreen";
 			rdfs:comment "A touchscreen is an input and output device and normally layered on the top of an electronic visual display of an information processing system".
-db:motion_sensor a vg:Controller ;
+:motion_sensor a vg:Controller ;
             rdfs:label "motion sensor";
 			rdfs:comment "A motion detector is an electrical device that utilizes a sensor to detect nearby motion".
 
@@ -74,13 +74,13 @@ db:motion_sensor a vg:Controller ;
 # Game intentions
 #########################
 
-db:casual_gaming a vg:Intention;
+:casual_gaming a vg:Intention;
 				rdfs:label "casual gaming";
 				rdfs:comment "Casual games are designed for easy of accessibility, simple to understand gameplay and quick to grasp rule sets, and aimed at mass market audience, as opposed to a hardcore game".
-db:educational_gaming a vg:Intention;
+:educational_gaming a vg:Intention;
 				rdfs:label "educational gaming";
 				rdfs:comment "Education software has been used in homes and classrooms to help teach children and students".
-db:serious_gaming a vg:Intention 
+:serious_gaming a vg:Intention 
 				rdfs:label "serious gaming";
 				rdfs:comment "Further extending from educational games, serious games are those where the entertainment factor may be augmented, overshadowed, or even eliminated by other purposes for the game".
 
@@ -89,11 +89,11 @@ db:serious_gaming a vg:Intention
 # Game media
 #########################
 
-db:physical a vg:Game_media ;
+:physical a vg:Game_media ;
 			rdfs:label "physical";
 			rdfs:comment "Games that are sold or given in a physical format. eg, CD, flash memory";
 			p:type  (db:CD db:flash_memory).
-db:digital a db:game_media ;
+:digital a db:game_media ;
 			rdfs:label "digital";
 			rdfs:comment "Games that are sold or given in a digital format. eg, downloadable content";
 			p:type db:downloadable_content .
@@ -148,21 +148,30 @@ db:digital a db:game_media ;
 
 vg:Console rdfs:subClassOf vg:Platform .
 
-db:Xbox_One a vg:Console ;
-	p:hasGame :game1, :game2.
+:Xbox_One a vg:Console ;
+		rdfs:label "xbox one";
+		rdfs:comment "The Xbox One is a home video game console developed by Microsoft.";
+		p:hasGame :game1, :game2.
 
-db:Playstation5 a vg:Console ;
-	p:hasGame :game3, :game4.
+:Playstation5 a vg:Console ;
+		rdfs:label "Playsation 5";
+		rdfs:comment "The PlayStation 5 (PS5) is an upcoming home video game console developed by Sony Interactive Entertainment";
+		p:hasGame :game3, :game4.
 
-db:PC a vg:Console ;
-	p:hasGame :game5, :game6.
+:PC a vg:Console ;
+		rdfs:label "Personnal computer";
+		rdfs:comment "A personal computer (PC) is a multi-purpose computer whose size, capabilities, and price make it feasible for individual use";
+		p:hasGame :game5, :game6.
 
-db:Switch a vg:Console ;
-	p:hasGame :game7, :game8
+:Switch a vg:Console ;
+		rdfs:label "Nintendo Switch";
+		rdfs:comment "The Nintendo Switch is a video game console, developed by Nintendo and released worldwide";
+		p:hasGame :game7, :game8.
 
-db:Mobile a vg:Console ;
-	p:hasGame :game9, :game10
-
+:Mobile a vg:Console ;
+		rdfs:label "Mobile device";
+		rdfs:comment "A mobile device is a computer small enough to hold and operate in the hand.";
+		p:hasGame :game9, :game10.
 
 
 #########################
@@ -171,23 +180,68 @@ db:Mobile a vg:Console ;
 
 vg:Streaming_platform rdfs:subClassOf vg:Platform .
 
-db:Youtube a vg:Streaming_platform ;
-	p:url "https://www.youtube.com/" .
-db:Twitch a vg:Streaming_platform ;
-	p:url "https://www.twitch.tv/" .
-db:Mixer a vg:Streaming_platform ;
-	p:url "https://www.facebook.com/gaming/browse/games" .
+:Youtube a vg:Streaming_platform ;
+		rdfs:label "Youtube";
+		rdfs:comment "YouTube is an American online video-sharing platform.";
+		p:url "https://www.youtube.com/" .
+:Twitch a vg:Streaming_platform ;
+		rdfs:label "Twitch";
+		rdfs:comment "Twitch is a video live streaming service operated by Twitch Interactive, a subsidiary of Amazon.";
+		p:url "https://www.twitch.tv/" .
+:Mixer a vg:Streaming_platform ;
+		rdfs:label "Mixer";
+		rdfs:comment "Mixer was an American video game live streaming platform.";
+		p:url "https://www.facebook.com/fbgaminghome/blog/welcome-mixer-facebook-gaming" .
 
-p:url rdfs:range db:URL .
+#########################
+# People
+#########################
+
+vg:Creator rdfs:subClassOf foaf:Person .
+:Developer a vg:Creator;
+			rdfs:label "Developer";
+			rdfs:comment "A video game developer is a software developer specializing in video game development – the process and related disciplines of creating video games".
+:GameDesigner a vg:Creator;
+			rdfs:label "Game designer";
+			rdfs:comment "A game designer apply design and aesthetics to create a game for entertainment or for educational." .
+:SoundProducer a vg:Creator;
+			rdfs:label "Sound producer";
+			rdfs:comment "A sound producer simply operates the technology employed in a recording." .
+
+
+vg:User rdfs:subClassOf foaf:Person .
+:Casual_User a vg:User;
+			rdfs:label "casual user";
+			rdfs:comment "Type of gamer who usually plays non-competitive games".
+:Hardcore_User a vg:User;
+			rdfs:label "hardcore user";
+			rdfs:comment "Type of gamer who usually plays competitive games".
+:Professional_User a vg:User;
+			rdfs:label "professional user";
+			rdfs:comment "Type of gamer whose full time job is playing games and will usually partipate in Esports events.".
+
+
+#########################
+# Conferences
+#########################
+
+:E3 a vg:Conference ;
+    rdfs:label "Electronic Entertainment Expo" ;
+    event:time "2021-06-15"^^xsd:date .
+:Dream_Hack a vg:Conference ;
+    rdfs:label "DreamHack" ;
+    event:time "2020-11-26"^^xsd:date .
+:GDC a vg:Conference .
+    rdfs:label "Game Developers Conference" ;
+    event:time "2021-06-19"^^xsd:date .
 
 #########################
 # Player Modes
 #########################
 
-db:Multiplayer a vg:Player_Mode .
-db:SingplePlayer a vg:Player_Mode .
-db:Coop a vg:Player_Mode .
-
+:Multiplayer a vg:Player_Mode .
+:SingplePlayer a vg:Player_Mode .
+:Coop a vg:Player_Mode .
 
 
 #########################
@@ -200,7 +254,6 @@ db:First_Person a vg:View_Mode .
 db:Third_Person a vg:View_Mode .
 
 
-
 #########################
 # Genres
 #########################
@@ -211,41 +264,10 @@ db:Shooter a vg:Genre .
 db:Metroidvania a vg:Genre .
 
 #########################
-# People
-#########################
-
-vg:Creator rdfs:subClassOf foaf:Person .
-db:Developer a vg:Creator .
-db:GameDesigner a vg:Creator .
-db:SoundProducer a vg:Creator .
-
-
-vg:User rdfs:subClassOf foaf:Person .
-db:Casual_User a vg:User .
-db:Hardcore_User a vg:User .
-db:Professional_User a vg:User .
-
-
-
-#########################
-# Conferences
-#########################
-
-db:E3 a vg:Conference ;
-    rdfs:label "Electronic Entertainment Expo" ;
-    p:next_date "2021-06-15"^^xsd:date .
-db:Dream_Hack a vg:Conference ;
-    rdfs:label "DreamHack" ;
-    p:next_date "2020-11-26"^^xsd:date .
-db:GDC a vg:Conference .
-    rdfs:label "Game Developers Conference" ;
-    p:next_date "2021-06-19"^^xsd:date .
-
-
-#########################
 # Properties
 #########################
 
+p:url rdfs:range db:URL .
 
 #########################
 # Video game
