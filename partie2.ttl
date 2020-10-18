@@ -1,15 +1,14 @@
 @prefix : <example.org/ontologies/games> .
 @prefix p: <http://example.org/properties#> .
-@prefix vg: <http://example.org/video/games#> .
 @prefix schema: <https://schema.org/docs/schema.html> .
-@prefix db: <http://example-database.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix event: <http://motools.sourceforge.net/event/event.html>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 #########################
-#  Classes         
+# Classes         
 #########################
 :GameCompany a rdfs:class;
 			rdfs:subClassOf schema:Corporation;
@@ -80,6 +79,24 @@
 		rdfs:subClassOf schema:Thing;
 		rdfs:comment "The game genre."@en.
 		rdfs:label "Game genre"@en.
+
+#########################
+# Data Properties         
+#########################
+
+:website a rdf:Property;
+		rdfs:label "Website"@en;
+		rdfs:comment "Company's website"@en;
+		rdfs:domain :GameCompany;
+		rdfs:range xsd:string.
+
+
+
+
+
+#########################
+# Object Properties         
+#########################
 
 
 
