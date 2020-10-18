@@ -9,18 +9,79 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 #########################
-# Countries
+#  Classes         
 #########################
+:GameCompany a rdfs:class;
+			rdfs:subClassOf schema:Corporation;
+			rdfs:comment "Company that manufactures or provides service related to games."@en;
+			rdfs:label "Game company"@en.
 
-:Japan a schema:Country ;
-        rdfs:label "Japan" ;
-        rdfs:comment "Japan is an island country in East Asia located in the northwest Pacific Ocean".
-:China a schema:Country ;
-        rdfs:label "China" ;
-        rdfs:comment "China is a country in East Asia".
-:United_States a schema:Country ;
-        rdfs:label "United States" ;
-        rdfs:comment "The United States of America is a country primarily located in central North America, between Canada and Mexico".
+:Controller a rdfs:class;
+			rdfs:subClassOf schema:Thing;
+			rdfs:comment "Tool used to give input from user to game."@en;
+			rdfs:label "Game controller"@en.
+
+:Intention a rdfs:class;
+			rdfs:subClassOf schema:Thing;
+			rdfs:comment "Intention of the game developed."@en;
+			rdfs:label "Game intention"@en.
+
+:Game a rdfs:class;
+		rdfs:subClassOf schema:VideoGame;
+		rdfs:comment "An electronic game."@en;
+		rdfs:label "Electronic Game"@en.
+
+:Media a rdfs:class;
+		rdfs:subClassOf schema:MediaObject;
+		rdfs:comment "Media format to distribute games."@en;
+		rdfs:label "Game Media"@en.
+
+:Platform a rdfs:class;
+		rdfs:subClassOf schema:Thing;
+		rdfs:comment "Platform on which the game is displayed or ran on."@en;
+		rdfs:label "Game Platform"@en.
+
+:Console a rdfs:class;
+		rdfs:subClassOf :Platform;
+		rdfs:comment "Tool used to run a game."@en;
+		rdfs:label "Game Console"@en.
+
+:Stream a rdfs:class;
+		rdfs:subClassOf :Platform;
+		rdfs:comment "Service provider to watch gaming content."@en;
+		rdfs:label "Game Streaming"@en.
+
+:Creator a rdfs:class;
+		rdfs:subClassOf foaf:Person;
+		rdfs:comment "A person who works on the game's developement."@en;
+		rdfs:label "Game creator"@en.
+
+:User a rdfs:class;
+		rdfs:subClassOf foaf:Person;
+		rdfs:comment "A person who plays the game."@en;
+		rdfs:label "Gamer"@en.
+
+:Conference a rdfs:class;
+			rdfs:subClassOf event:Event;
+			rdfs:comment "Event dedicated for the gaming industry."@en;
+			rdfs:label "Game conference"@en.
+
+:GamePlayerMode a rdfs:class;
+			rdfs:subClassOf schema:Thing;
+			rdfs:comment "Number of player in the game."@en;
+			rdfs:label "Game player mode"@en.
+
+:GameViewMode a rdfs:class;
+			rdfs:subClassOf schema:Thing;
+			rdfs:comment "The way how a player will see the game."@en;
+			rdfs:label "Game view mode"@en.
+
+:GameGenre a rdfs:class;
+		rdfs:subClassOf schema:Thing;
+		rdfs:comment "The game genre."@en.
+		rdfs:label "Game genre"@en.
+
+
 
 
 #########################
