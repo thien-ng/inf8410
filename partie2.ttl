@@ -1,10 +1,11 @@
 @prefix : <example.org/ontologies/games> .
-@prefix p: <http://example.org/properties#> .
 @prefix schema: <https://schema.org/docs/schema.html> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix event: <http://motools.sourceforge.net/event/event.html>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#TO DO remove?
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 #########################
