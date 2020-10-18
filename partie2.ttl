@@ -1,4 +1,4 @@
-@prefix : <example.org/> .
+@prefix : <example.org/ontologies/games> .
 @prefix p: <http://example.org/properties#> .
 @prefix vg: <http://example.org/video/games#> .
 @prefix schema: <https://schema.org/docs/schema.html> .
