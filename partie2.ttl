@@ -98,6 +98,13 @@
 	rdfs:domain :GameCompany;
 	rdfs:range xsd:string.
 
+# Creator
+:role a rdf:Property;
+	rdfs:label "role"@en;
+	rdfs:comment "role of creator"@en;
+	rdfs:domain :Creator;
+	rdfs:range xsd:string.
+
 # User
 :username a rdf:Property;
 	rdfs:label "Name"@en;
@@ -124,7 +131,7 @@
 	rdfs:label "release date"@en;
 	rdfs:comment "release date of a game"@en;
 	rdfs:domain :Game;
-	rdfs:range xsd:dateTime.
+	rdfs:range xsd:integer.
 
 :price a rdf:Property;
 	rdfs:label "price"@en;
@@ -132,9 +139,23 @@
 	rdfs:domain :Game;
 	rdfs:range xsd:nonNegativeInteger.
 
+
 #########################
 # Object Properties         
 #########################
+
+# Company
+:hasGame a rdf:Property;
+		rdfs:label "has game"@en;
+		rdfs:comment "company has game"@en;
+		rdfs:domain :GameCompany;
+		rdfs:range :Game.
+
+:host a rdf:Property;
+		rdfs:label "host"@en;
+		rdfs:comment "company host"@en;
+		rdfs:domain :GameCompany;
+		rdfs:range :Conference.
 
 # Game
 :GOwnedBy a rdf:Property;

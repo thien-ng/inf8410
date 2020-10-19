@@ -1,0 +1,66 @@
+@prefix game: <example.org/ontologies/games> .
+@prefix schema: <https://schema.org/docs/schema.html> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix event: <http://motools.sourceforge.net/event/event.html>.
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+#Cas 1:
+# Jagex est une compagnie de jeux vidéo reconnu pour le jeu "Runescape" gratuit. Ce jeu multijoueur est un third person viewer et son
+# genre est du Massively multiplayer online role-playing game. Ce jeu a eu ça première sortie en 2001. La compagnie a fait a un évènement,
+# "Deadman's mode", qui est un tournoi de survie le 30 mars 2019.
+
+:MMORPG a gm:GameGenre;
+        schema:name "Multiplayer Online Role-Playing Game"^^xsd:string.
+
+:TPS a gm:GameViewMode;
+        schema:name "Third Person View"^^xsd:string.
+
+:Multiplayer a gm:GamePlayerMode;
+        schema:name "Multiplayer"^^xsd:string.
+
+:Jagex a gm:GameCompany;
+    schema:name "Jagex"^^xsd:string;
+    gm:hasGame [
+        a gm:Game; 
+        schema:name "Runescape"^^xsd:string;
+        gm:releaseDate "2001"^^xsd:integer;
+        gm:price "0"^^xsd:integer;
+        gm:hasGenre :MMORPG;
+        gm:hasViewMode :TPS;
+        gm:hasPlayerMode :Multiplayer;
+    ];
+    gm:host [
+        a gm:Conference;
+        schema:name "Deadman's mode"^^xsd:string;
+        tl:atDate "2019-03-30"^^xsd:date;
+    ].
+
+#Cas 2:
+# Le jeu Among Us a été développé par une équipe de 3 personnes. Soit Konstantinos et Gordon - les game developers,
+# Kim-Jong Un - le game designer. Ce jeu fait partie de PolyGames, une grande compagnie canadienne: www.PolyGamez.tv.
+
+:Konstantinos a gm:Creator;
+        schema:name "Konstantinos Lambrou-Latreille"^^xsd:string;
+        gm:role "Game Developer"^^xsd:string.
+
+:Gordon a gm:Creator;
+        schema:name "Gordon Ramsay"^^xsd:string;
+        gm:role "Game Developer"^^^xsd:string.
+
+:KimJongUn a gm:Creator;
+        schema:name "Kim-Jong Un"^^xsd:string;
+        gm:role "Game Designer"^^xsd:string.
+
+:AmongUs a gm:Game;
+    gm:GOwnedBy [
+        a gm:GameCompany;
+        schema:name "PolyGames"^^xsd:string;
+        gm:website "www.PolyGamez.tv"^^xsd:string;
+    ];
+    gm:workOn [
+        a rdf:Seq;
+        rdf:_1 :Konstantinos;
+        rdf:_2 :Gordon;
+        rdf:_3 :KimJongUn;
+    ].
