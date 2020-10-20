@@ -1,4 +1,4 @@
-@prefix : <example.org/> .
+@prefix : <example.org/ontologies/cas-dutilisation> .
 @prefix gm: <example.org/ontologies/games> .
 @prefix schema: <https://schema.org/docs/schema.html> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -6,8 +6,7 @@
 
 #Cas 1:
 # Jagex, dont le site est www.jagex.com, est une compagnie de jeux vidéo reconnu pour le jeu "Runescape" gratuit. Ce jeu multijoueur est un third person viewer et son
-# genre est du Massively multiplayer online role-playing game. Le jeu a été publié le 4 janvier 2001. La compagnie a tenu un tournoi,
-# "Deadman's mode", qui a eu lieu de 1 mai 2020 au 30 mai 2020.
+# genre est du Massively multiplayer online role-playing game. Le jeu a été publié le 4 janvier 2001. La compagnie a tenu un festival, RuneFest 2019, qui a eu lieu le 4 et 5 octobre 2019.
 
 :ThirdPerson a gm:GameViewMode;
         schema:name "Third Person View"^^xsd:string.
@@ -15,7 +14,7 @@
 :Jagex a gm:GameCompany;
     schema:name "Jagex"^^xsd:string;
     gm:website "www.jagex.com"^^xsd:string;
-    gm:hasGame [
+    gm:hasDeveloped [
         a schema:VideoGame; 
         schema:name "Runescape"^^xsd:string;
         schema:datePublished "2001-01-04"^^xsd:date;
@@ -24,11 +23,12 @@
         gm:gamePrice "0"^^xsd:integer;
         gm:hasViewMode :ThirdPerson;
     ];
-    gm:host [
+    gm:hosts [
         a gm:GameEvent;
-        schema:name "Deadman's mode"^^xsd:string;
-        schema:startDate "2020-05-01"^^xsd:date;
-        schema:endDate "2020-05-30"^^xsd:date;
+        gm:hostMedium schema:Festival;
+        schema:name "RuneFest 2019"^^xsd:string;
+        schema:startDate "2019-10-04"^^xsd:date;
+        schema:endDate "2019-10-05"^^xsd:date;
     ].
 
 #Cas 2:
@@ -54,12 +54,7 @@
         schema:name "PolyGames"^^xsd:string;
         gm:website "www.PolyGamez.tv"^^xsd:string;
     ];
-    gm:createdBy [
-        a rdf:Seq;
-        rdf:_1 :Konstantinos;
-        rdf:_2 :Gordon;
-        rdf:_3 :KimJongUn;
-    ];
+    gm:createdBy (:Konstantinos :Gordon :KimJongUn);
     gm:format [ a gm:Media; schema:name "Digital"^^xsd:string; ] .
 
 #Cas 3:
@@ -97,11 +92,12 @@
         schema:name "Duc"^^xsd:string;
         gm:username "paikwon"^^xsd:string;
         gm:plays :FallGuys;
-        gm:streams [ a gm:StreamSession;
-                       gm:streamedOn [a gm:Stream; schema:name "Twitch"^^xsd:string;];
-                       schema:name "Duc's Stream"^^xsd:string;
-                       gm:duration "PT1H30M"^^xsd:duration;
-                       gm:game :FallGuys;
+        gm:streams [ 
+                a gm:StreamSession;
+                gm:streamedOn [a gm:Stream; schema:name "Twitch"^^xsd:string;];
+                schema:name "Duc's Stream of Fall Guys"^^xsd:string;
+                schema:duration "PT1H30M"^^xsd:duration;
+                gm:game :FallGuys;
         ].
 #Cas 4
 # Bob joue à Terraria sur son PC. Son nom d'utilisateur est Bobby.
@@ -113,32 +109,34 @@
 # Le jeu est uniquement disponible en version digitale et physique.
 
 :Bob a gm:User;
+        schema:name "Bob"^^xsd:string;
         gm:playsOn [a gm:Console; schema:name "PC"^^xsd:string;];
         gm:username "Bobby"^^xsd:string;
-        gm:plays [a schema:VideoGame;
-                  schema:name "Terraria"^^xsd:string;
-                  gm::hasViewMode [ a gm:GameViewMode;schema:name "Side-Scroller View"^^xsd:string; ];
-                  schema:genre ("Platformer"^^xsd:string "Aventure"^^xsd:string);
-                  gm:gameOwnedBy [ a gm:GameCompany; schema:name "Re-Logic"^^xsd:string; ];
-                  gm:publishedBy [ a gm:GameCompany; schema:name "505 Games"^^xsd:string; ];
-                  schema:gamePlatform [a gm:Console; schema:name "PC"^^xsd:string; ];
-                  schema:datePublished "2011-05-16"^^xsd:date;
-                  gm:playedWith ([ a gm:Controller; schema:name "Gamepad"^^xsd:string; ] [ a gm:Controller; schema:name "Keyboard"^^xsd:string; ]);
-                  schema:gameLocation ([ a schema:Place; schema:name "Forests"^^xsd:string; ] 
-                                       [ a schema:Place; schema:name "Deserts"^^xsd:string; ]
-                                       [ a schema:Place; schema:name "Corruption"^^xsd:string; ]
-                                       [ a schema:Place; schema:name "Snow"^^xsd:string; ]
-                                       [ a schema:Place; schema:name "Hallow"^^xsd:string; ]
-                                       [ a schema:Place; schema:name "Ocean"^^xsd:string; ]                                        
-                  );
-                  schema:gameItem ([ a gm:GameItem; schema:name "Tool"^^xsd:string; ] 
-                                   [ a gm:GameItem; schema:name "Weapon"^^xsd:string; ]
-                                   [ a gm:GameItem; schema:name "Accessory"^^xsd:string; ]
-                                   [ a gm:GameItem; schema:name "Crafting Material"^^xsd:string; ]
-                                   [ a gm:GameItem; schema:name "Consumable"^^xsd:string; ]
-                                   [ a gm:GameItem; schema:name "Armor"^^xsd:string; ]                                        
-                  );
-                  gm:format ([a gm:Media; schema:name "Physical"^^xsd:string;] [ a gm:Media; schema:name "Digital"^^xsd:string; ] )
+        gm:plays [
+                a schema:VideoGame;
+                schema:name "Terraria"^^xsd:string;
+                gm::hasViewMode [ a gm:GameViewMode;schema:name "Side-Scroller View"^^xsd:string; ];
+                schema:genre ("Platformer"^^xsd:string "Aventure"^^xsd:string);
+                gm:gameOwnedBy [ a gm:GameCompany; schema:name "Re-Logic"^^xsd:string; ];
+                gm:publishedBy [ a gm:GameCompany; schema:name "505 Games"^^xsd:string; ];
+                schema:gamePlatform [a gm:Console; schema:name "PC"^^xsd:string; ];
+                schema:datePublished "2011-05-16"^^xsd:date;
+                gm:playedWith ([ a gm:Controller; schema:name "Gamepad"^^xsd:string; ] [ a gm:Controller; schema:name "Keyboard"^^xsd:string; ]);
+                schema:gameLocation ([ a schema:Place; schema:name "Forests"^^xsd:string; ] 
+                                     [ a schema:Place; schema:name "Deserts"^^xsd:string; ]
+                                     [ a schema:Place; schema:name "Corruption"^^xsd:string; ]
+                                     [ a schema:Place; schema:name "Snow"^^xsd:string; ]
+                                     [ a schema:Place; schema:name "Hallow"^^xsd:string; ]
+                                     [ a schema:Place; schema:name "Ocean"^^xsd:string; ]                                        
+                );
+                schema:gameItem ([ a gm:GameItem; schema:name "Tool"^^xsd:string; ] 
+                                 [ a gm:GameItem; schema:name "Weapon"^^xsd:string; ]
+                                 [ a gm:GameItem; schema:name "Accessory"^^xsd:string; ]
+                                 [ a gm:GameItem; schema:name "Crafting Material"^^xsd:string; ]
+                                 [ a gm:GameItem; schema:name "Consumable"^^xsd:string; ]
+                                 [ a gm:GameItem; schema:name "Armor"^^xsd:string; ]                                        
+                );
+                gm:format ([ a gm:Media; schema:name "Physical"^^xsd:string; ] [ a gm:Media; schema:name "Digital"^^xsd:string; ] )
         ];
         gm:hasCompleted [
                 schema:quest   [ a gm:GameQuest; schema:name "Caught in Surface"^^xsd:string; ];
@@ -154,14 +152,16 @@
         schema:name "Ubisoft Forward"^^xsd:string;
         schema:startDate "2020-07-12"^^xsd:date;
         schema:endDate "2020-07-12"^^xsd:date;
-        gm:hostType [ a gm:StreamSession;
-                        gm:streamedOn [a gm:Stream; schema:name "Youtube"^^xsd:string;];
-                        gm:duration "PT30M"^^xsd:duration;
+        gm:hostMedium [ 
+                a gm:StreamSession;
+                schema:name "Ubisoft Stream"^^xsd:string;
+                gm:streamedOn [a gm:Stream; schema:name "Youtube"^^xsd:string;];
+                schema:duration "PT30M"^^xsd:duration;
         ].
 
 :Ubisoft a gm:GameCompany;
         schema:name "Ubisoft"^^xsd:string;
-        gm:host :Forward.
+        gm:hosts :Forward.
 
 :Rabbids a schema:VideoGame;
         schema:name "Rabbids Coding"^^xsd:string;
