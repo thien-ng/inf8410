@@ -3,6 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
 
 #########################
 # Classes         
@@ -70,22 +71,22 @@ gm:GameViewMode a rdfs:class;
 # Inside a game
 gm:GameItem a rdfs:class;
 		rdfs:subClassOf schema:Thing;
-		rdfs:comment "Any item inside a game."@en.
+		rdfs:comment "Any item inside a game."@en;
 		rdfs:label "Game item"@en.
 
 gm:GameLocation a rdfs:class;
 		rdfs:subClassOf schema:Place;
-		rdfs:comment "A place inside a game."@en.
+		rdfs:comment "A place inside a game."@en;
 		rdfs:label "Game location"@en.
 
 gm:GameQuest a rdfs:class;
 		rdfs:subClassOf schema:Thing;
-		rdfs:comment "A quest inside a game."@en.
+		rdfs:comment "A quest inside a game."@en;
 		rdfs:label "Game quest"@en.
 
 gm:GameAchievement a rdfs:class;
 		rdfs:subClassOf schema:Thing;
-		rdfs:comment "An achievement inside a game."@en.
+		rdfs:comment "An achievement inside a game."@en;
 		rdfs:label "Game achievement"@en.
 
 #########################
@@ -228,10 +229,10 @@ gm:hostType a rdf:Property;
 gm:hasCompleted a rdf:Property;
 		rdfs:label "has completed"@en;
 		rdfs:comment "User has completed something"@en;
-		rdfs:domain gm:User;
+		rdfs:domain gm:User.
 
 gm:achievement a rdf:Property;
 		rdfs:label "achievement"@en;
 		rdfs:comment "Accomplishment earned by performing various tasks."@en;
-		rdfs:range gm:GameAchievement;
+		rdfs:range gm:GameAchievement.
 

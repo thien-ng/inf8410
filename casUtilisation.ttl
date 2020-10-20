@@ -20,7 +20,7 @@
         schema:name "Runescape"^^xsd:string;
         schema:datePublished "2001-01-04"^^xsd:date;
         schema:playMode schema:Multiplayer;
-        schema:genre "Multiplayer Online Role-Playing Game"^^xsd:string.
+        schema:genre "Multiplayer Online Role-Playing Game"^^xsd:string;
         gm:gamePrice "0"^^xsd:integer;
         gm:hasViewMode :ThirdPerson;
     ];
@@ -59,12 +59,15 @@
         rdf:_1 :Konstantinos;
         rdf:_2 :Gordon;
         rdf:_3 :KimJongUn;
-    ]
-    gm:format [ a gm:Media; schema:name "Digital"^^xsd:string;] .
+    ];
+    gm:format [ a gm:Media; schema:name "Digital"^^xsd:string; ] .
 
 #Cas 3:
-# Avec le nom d'utilisateur "paikwon", Duc joue au jeu Fall Guys Ultimate Knockout, un jeu multijoueur, vu à la troisième personne, de genre Battle Royal, développé par la compagnie Mediatonic et publié par la compagnie Devolver Digital qui se veut être casual.
-# Le jeu peut être joué sur PC et PlayStation 4 avec gamepad ou keyboard. Il stream une session de jeu de Fall Guys qui dure 1h30 sur la plateforme de streaming Twitch, son channel est www.twitch.tv/duc.
+# Avec le nom d'utilisateur "paikwon", Duc joue au jeu Fall Guys Ultimate Knockout, un jeu multijoueur, vu à la troisième personne, de genre Battle Royal, développé par
+# la compagnie Mediatonic et publié (le 16 mai 2011) par la compagnie Devolver Digital qui se veut être 'casual'. Le jeu peut être joué sur PC et PlayStation 4 avec gamepad ou keyboard.
+# Le jeu contient plusieurs maps, soit: Dizzy Heights, See Saw, The Whirlygig, Fruit Chute, Slime Climb et Ocean.
+# Le jeu a aussi des items: Upper Skin, Face, Pattern, Colour et Lower Skin.
+# Il stream une session de jeu de Fall Guys qui dure 1h30 sur la plateforme de streaming Twitch, il l'appelle: "Duc's Stream".
 :FallGuys a schema:VideoGame;
         schema:name "Fall Guys Ultimate Knockout"^^xsd:string;
         schema:playMode schema:Multiplayer;
@@ -91,6 +94,7 @@
         ).
 
 :Duc a gm:User;
+        schema:name "Duc"^^xsd:string;
         gm:username "paikwon"^^xsd:string;
         gm:plays :FallGuys;
         gm:streams [ a gm:StreamSession;
@@ -100,7 +104,7 @@
                        gm:game :FallGuys;
         ].
 #Cas 4
-# Bob joue à Terraria sur son PC avec une version digitale du jeu. Son nom d'utilisateur est Bobby.
+# Bob joue à Terraria sur son PC. Son nom d'utilisateur est Bobby.
 # Ce jeu side-scroller est de genre Platformer et Aventure. 
 # La version originale a été développée par la compagnie Re-Logic et publiée par 505 Games sur PC uniquement le 16 mai 2011 avec gamepad et keyboard.
 # Le jeu permet de se promener entre les lieux suivants: Forests, Deserts, Corruption, Jungle, Snow, Hallow et Ocean.
@@ -114,7 +118,7 @@
         gm:plays [a schema:VideoGame;
                   schema:name "Terraria"^^xsd:string;
                   gm::hasViewMode [ a gm:GameViewMode;schema:name "Side-Scroller View"^^xsd:string; ];
-                  schema:genre ("Platformer"^^xsd:string, "Aventure"^^xsd:string);
+                  schema:genre ("Platformer"^^xsd:string "Aventure"^^xsd:string);
                   gm:gameOwnedBy [ a gm:GameCompany; schema:name "Re-Logic"^^xsd:string; ];
                   gm:publishedBy [ a gm:GameCompany; schema:name "505 Games"^^xsd:string; ];
                   schema:gamePlatform [a gm:Console; schema:name "PC"^^xsd:string; ];
@@ -141,7 +145,7 @@
                 gm:achievement [ a gm:GameAchievement; schema:name "Hero of Etheria"^^xsd:string; ];
         ].
 
-#Cas 4
+#Cas 5
 # Durant l'Ubisoft Forward du 12 juillet 2020, un événement organisé par Ubisoft, on apprend qu'ils ont développé et publié un jeu single-player gratuit éducatif sur la programmation: Rabbids Coding.
 # Ce jeu est uniquement disponible digitalement sur PC. Le jeu possède 3 quêtes : Bwaaah 1, Bwaaah 2, Bwaaah 3. Après avoir fini le jeu, le joueur obtient l'achievement Code Master.
 # Ils ont streamé l'événement sur leur chaine Youtube, la session a duré 30min.
@@ -149,7 +153,7 @@
 :Forward a gm:GameEvent;
         schema:name "Ubisoft Forward"^^xsd:string;
         schema:startDate "2020-07-12"^^xsd:date;
-        schema:endDate "2020-07-12"^^xsd:date.
+        schema:endDate "2020-07-12"^^xsd:date;
         gm:hostType [ a gm:StreamSession;
                         gm:streamedOn [a gm:Stream; schema:name "Youtube"^^xsd:string;];
                         gm:duration "PT30M"^^xsd:duration;
