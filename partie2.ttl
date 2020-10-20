@@ -150,6 +150,7 @@ gm:host a rdf:Property;
 gm:game a rdf:Property;
 		rdfs:label "Game"@en;
 		rdfs:comment "Refers to a game"@en;
+		rdfs:domain gm:StreamSession;
 		rdfs:range schema:VideoGame.
 
 gm:gameOwnedBy a rdf:Property;
