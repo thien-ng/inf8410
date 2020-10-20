@@ -1,44 +1,40 @@
-@prefix game: <example.org/ontologies/games> .
+@prefix : <example.org/> .
+@prefix gm: <example.org/ontologies/games> .
 @prefix schema: <https://schema.org/docs/schema.html> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix event: <http://motools.sourceforge.net/event/event.html>.
-@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 #Cas 1:
-# Jagex est une compagnie de jeux vidéo reconnu pour le jeu "Runescape" gratuit. Ce jeu multijoueur est un third person viewer et son
-# genre est du Massively multiplayer online role-playing game. Ce jeu a eu ça première sortie en 2001. La compagnie a fait a un évènement,
-# "Deadman's mode", qui est un tournoi de survie le 30 mars 2019.
+# Jagex, dont le site est www.jagex.com, est une compagnie de jeux vidéo reconnu pour le jeu "Runescape" gratuit. Ce jeu multijoueur est un third person viewer et son
+# genre est du Massively multiplayer online role-playing game. Le jeu a été publié le 4 janvier 2001. La compagnie a tenu un tournoi,
+# "Deadman's mode", qui a eu lieu de 1 mai 2020 au 30 mai 2020.
 
-:MMORPG a gm:GameGenre;
-        schema:name "Multiplayer Online Role-Playing Game"^^xsd:string.
-
-:TPS a gm:GameViewMode;
+:ThirdPerson a gm:GameViewMode;
         schema:name "Third Person View"^^xsd:string.
-
-:Multiplayer a gm:GamePlayerMode;
-        schema:name "Multiplayer"^^xsd:string.
 
 :Jagex a gm:GameCompany;
     schema:name "Jagex"^^xsd:string;
+    gm:website "www.jagex.com"^^xsd:string;
     gm:hasGame [
         a gm:Game; 
         schema:name "Runescape"^^xsd:string;
-        gm:releaseDate "2001"^^xsd:integer;
+        schema:datePublished "2001-01-04"^^xsd:date;
+        schema:playMode schema:Multiplayer;
+        schema:genre "Multiplayer Online Role-Playing Game"^^xsd:string.
         gm:price "0"^^xsd:integer;
-        gm:hasGenre :MMORPG;
-        gm:hasViewMode :TPS;
-        gm:hasPlayerMode :Multiplayer;
+        gm:hasViewMode :ThirdPerson;
     ];
     gm:host [
-        a gm:Conference;
+        a gm:GameEvent;
         schema:name "Deadman's mode"^^xsd:string;
-        tl:atDate "2019-03-30"^^xsd:date;
+        schema:startDate "2020-05-01"^^xsd:date;
+        schema:endDate "2020-05-30"^^xsd:date;
     ].
 
 #Cas 2:
 # Le jeu Among Us a été développé par une équipe de 3 personnes. Soit Konstantinos et Gordon - les game developers,
 # Kim-Jong Un - le game designer. Ce jeu fait partie de PolyGames, une grande compagnie canadienne: www.PolyGamez.tv.
+# Le jeu est uniquement disponible en version digitale.
 
 :Konstantinos a gm:Creator;
         schema:name "Konstantinos Lambrou-Latreille"^^xsd:string;
@@ -46,21 +42,133 @@
 
 :Gordon a gm:Creator;
         schema:name "Gordon Ramsay"^^xsd:string;
-        gm:role "Game Developer"^^^xsd:string.
+        gm:role "Game Developer"^^xsd:string.
 
 :KimJongUn a gm:Creator;
         schema:name "Kim-Jong Un"^^xsd:string;
         gm:role "Game Designer"^^xsd:string.
 
 :AmongUs a gm:Game;
-    gm:GOwnedBy [
+    gm:gameOwnedBy [
         a gm:GameCompany;
         schema:name "PolyGames"^^xsd:string;
         gm:website "www.PolyGamez.tv"^^xsd:string;
     ];
-    gm:workOn [
+    gm:createdBy [
         a rdf:Seq;
         rdf:_1 :Konstantinos;
         rdf:_2 :Gordon;
         rdf:_3 :KimJongUn;
-    ].
+    ]
+    gm:format [ a gm:Media; schema:name "Digital"^^xsd:string;] .
+
+#Cas 3:
+# Avec le nom d'utilisateur "paikwon", Duc joue au jeu Fall Guys Ultimate Knockout, un jeu multijoueur, vu à la troisième personne, de genre Battle Royal, développé par la compagnie Mediatonic et publié par la compagnie Devolver Digital qui se veut être casual.
+# Le jeu peut être joué sur PC et PlayStation 4 avec gamepad ou keyboard. Il stream une session de jeu de Fall Guys qui dure 1h30 sur la plateforme de streaming Twitch, son channel est www.twitch.tv/duc.
+:FallGuys a gm:Game;
+        schema:name "Fall Guys Ultimate Knockout"^^xsd:string;
+        schema:playMode schema:Multiplayer;
+        gm::hasViewMode [ a gm:GameViewMode;schema:name "Third Person View"^^xsd:string; ];
+        schema:genre "Battle Royal"^^xsd:string;
+        gm:gameOwnedBy [ a gm:GameCompany; schema:name "Mediatonic"^^xsd:string; ];
+        gm:publishedBy [ a gm:GameCompany; schema:name "Devolver Digital"^^xsd:string; ];
+        gm:hasIntent [ a gm:Intention; schema:name "Casual gaming"^^xsd:string; ];
+        schema:gamePlatform ([ a gm:Console; schema:name "PC"^^xsd:string; ] [ a gm:Console; schema:name "PlayStation 4"^^xsd:string; ]);
+        schema:datePublished "2011-05-16"^^xsd:date;
+        gm:playWith ([ a gm:Controller; schema:name "Gamepad"^^xsd:string; ] [ a gm:Controller; schema:name "Keyboard"^^xsd:string; ]);
+        schema:gameLocation ([ a gm:GameLocation; schema:name "Dizzy Heights"^^xsd:string; ] 
+                             [ a gm:GameLocation; schema:name "See Saw"^^xsd:string; ]
+                             [ a gm:GameLocation; schema:name "The Whirlygig"^^xsd:string; ]
+                             [ a gm:GameLocation; schema:name "Fruit Chute"^^xsd:string; ]
+                             [ a gm:GameLocation; schema:name "Slime Climb"^^xsd:string; ]
+                             [ a gm:GameLocation; schema:name "Ocean"^^xsd:string; ]                                        
+        );
+        schema:gameItem ([ a gm:GameItem; schema:name "Upper Skin"^^xsd:string; ] 
+                         [ a gm:GameItem; schema:name "Face"^^xsd:string; ]
+                         [ a gm:GameItem; schema:name "Pattern"^^xsd:string; ]
+                         [ a gm:GameItem; schema:name "Colour"^^xsd:string; ]
+                         [ a gm:GameItem; schema:name "Lower Skin"^^xsd:string; ]
+        ).
+
+:Duc a gm:User;
+        gm:username "paikwon"^^xsd:string;
+        gm:plays :FallGuys;
+        gm:streams [ a gm:StreamSession;
+                       gm:streamedOn [a gm:Stream; schema:name "Twitch"^^xsd:string;];
+                       schema:name "Duc's Stream"^^xsd:string;
+                       gm:duration "PT1H30M"^^xsd:duration;
+                       gm:game :FallGuys;
+        ].
+#Cas 4
+# Bob joue à Terraria sur son PC avec une version digitale du jeu. Son nom d'utilisateur est Bobby.
+# Ce jeu side-scroller est de genre Platformer et Aventure. 
+# La version originale a été développée par la compagnie Re-Logic et publiée par 505 Games sur PC uniquement le 16 mai 2011 avec gamepad et keyboard.
+# Le jeu permet de se promener entre les lieux suivants: Forests, Deserts, Corruption, Jungle, Snow, Hallow et Ocean.
+# Le jeu permet de collectionner les items suivants: Tool, Weapon, Accessory, Crafting Material, Consumable et Armor.
+# Bob a uniquement complété la quête "Caught in Surface" et a obtenu l'achievement "Hero of Etheria".
+# Le jeu est uniquement disponible en version digitale et physique.
+
+:Bob a gm:User;
+        gm:playsOn [a gm:Console; schema:name "PC"^^xsd:string;];
+        gm:username "Bobby"^^xsd:string;
+        gm:plays [a gm:Game;
+                  schema:name "Terraria"^^xsd:string;
+                  gm::hasViewMode [ a gm:GameViewMode;schema:name "Side-Scroller View"^^xsd:string; ];
+                  schema:genre ("Platformer"^^xsd:string "Aventure"^^xsd:string);
+                  gm:gameOwnedBy [ a gm:GameCompany; schema:name "Re-Logic"^^xsd:string; ];
+                  gm:publishedBy [ a gm:GameCompany; schema:name "505 Games"^^xsd:string; ];
+                  schema:gamePlatform [a gm:Console; schema:name "PC"^^xsd:string; ];
+                  schema:datePublished "2011-05-16"^^xsd:date;
+                  gm:playWith ([ a gm:Controller; schema:name "Gamepad"^^xsd:string; ] [ a gm:Controller; schema:name "Keyboard"^^xsd:string; ]);
+                  schema:gameLocation ([ a schema:Place; schema:name "Forests"^^xsd:string; ] 
+                                       [ a schema:Place; schema:name "Deserts"^^xsd:string; ]
+                                       [ a schema:Place; schema:name "Corruption"^^xsd:string; ]
+                                       [ a schema:Place; schema:name "Snow"^^xsd:string; ]
+                                       [ a schema:Place; schema:name "Hallow"^^xsd:string; ]
+                                       [ a schema:Place; schema:name "Ocean"^^xsd:string; ]                                        
+                  );
+                  schema:gameItem ([ a gm:GameItem; schema:name "Tool"^^xsd:string; ] 
+                                   [ a gm:GameItem; schema:name "Weapon"^^xsd:string; ]
+                                   [ a gm:GameItem; schema:name "Accessory"^^xsd:string; ]
+                                   [ a gm:GameItem; schema:name "Crafting Material"^^xsd:string; ]
+                                   [ a gm:GameItem; schema:name "Consumable"^^xsd:string; ]
+                                   [ a gm:GameItem; schema:name "Armor"^^xsd:string; ]                                        
+                  );
+                  gm:format ([a gm:Media; schema:name "Physical"^^xsd:string;] [ a gm:Media; schema:name "Digital"^^xsd:string; ] )
+        ];
+        gm:hasCompleted [schema:quest   [ a gm:GameQuest; schema:name "Caught in Surface"^^xsd:string; ];
+                         gm:achievement [ a gm:GameAchievement; schema:name "Hero of Etheria"^^xsd:string; ];
+        ].
+
+#Cas 4
+# Durant l'Ubisoft Forward du 12 juillet 2020, un événement organisé par Ubisoft, on apprend qu'ils ont développé et publié un jeu single-player gratuit éducatif sur la programmation: Rabbids Coding.
+# Ce jeu est uniquement disponible digitalement sur PC. Le jeu possède 3 quêtes : Bwaaah 1, Bwaaah 2, Bwaaah 3. Après avoir fini le jeu, le joueur obtient l'achievement Code Master.
+# Ils ont streamé l'événement sur leur chaine Youtube, la session a duré 30min.
+
+:Forward a gm:GameEvent;
+        schema:name "Ubisoft Forward"^^xsd:string;
+        schema:startDate "2020-07-12"^^xsd:date;
+        schema:endDate "2020-07-12"^^xsd:date.
+        gm:hostType [ a gm:StreamSession;
+                        gm:streamedOn [a gm:Stream; schema:name "Youtube"^^xsd:string;];
+                        gm:duration "PT30M"^^xsd:duration;
+        ].
+
+:Ubisoft a gm:GameCompany;
+        schema:name "Ubisoft"^^xsd:string;
+        gm:host :Forward.
+
+:Rabbids a gm:Game;
+        schema:name "Rabbids Coding"^^xsd:string;
+        schema:playMode schema:SinglePlayer;
+        gm:price "0"^^xsd:integer;
+        gm:gameOwnedBy :Ubisoft;
+        gm:publishedBy :Ubisoft;
+        gm:hasIntent [ a gm:Intention; schema:name "Educational gaming"^^xsd:string; ];
+        gm:format [ a gm:Media; schema:name "Digital"^^xsd:string; ];
+        schema:gamePlatform [a gm:Console; schema:name "PC"^^xsd:string;];
+        schema:quest ([ a gm:GameQuest; schema:name "Bwaaah 1"^^xsd:string; ]
+                      [ a gm:GameQuest; schema:name "Bwaaah 2"^^xsd:string; ]
+                      [ a gm:GameQuest; schema:name "Bwaaah 3"^^xsd:string; ]
+        );
+        gm:achievement [ a gm:GameAchievement; schema:name "Code Master"^^xsd:string; ].
