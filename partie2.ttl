@@ -83,27 +83,27 @@ gm:GameViewMode
 # Inside a game
 gm:GameItem 
 	a rdfs:class;
-	:subClassOf schema:Thing;
-	:comment "Any item inside a game."@en;
-	:label "Game item"@en.
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "Any item inside a game."@en;
+	rdfs:label "Game item"@en.
 
 gm:GameLocation 
 	a rdfs:class;
-	:subClassOf schema:Place;
-	:comment "A place inside a game."@en;
-	:label "Game location"@en.
+	rdfs:subClassOf schema:Place;
+	rdfs:comment "A place inside a game."@en;
+	rdfs:label "Game location"@en.
 
 gm:GameQuest 
 	a rdfs:class;
-	:subClassOf schema:Thing;
-	:comment "A quest inside a game."@en;
-	:label "Game quest"@en.
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "A quest inside a game."@en;
+	rdfs:label "Game quest"@en.
 
 gm:GameAchievement 
 	a rdfs:class;
-	:subClassOf schema:Thing;
-	:comment "An achievement inside a game."@en;
-	:label "Game achievement"@en.
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "An achievement inside a game."@en;
+	rdfs:label "Game achievement"@en.
 
 #########################
 # Data Properties         
@@ -112,10 +112,10 @@ gm:GameAchievement
 # Game company
 gm:website 
 	a rdf:Property;
-	:label "Website"@en;
-	:comment "Company's website"@en;
-	:domain gm:GameCompany;
-	:range xsd:string.
+	rdfs:label "Website"@en;
+	rdfs:comment "Company's website"@en;
+	rdfs:domain gm:GameCompany;
+	rdfs:range xsd:string.
 
 # Creator
 gm:role 

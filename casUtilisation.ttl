@@ -5,9 +5,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-#Cas 1:
-# Jagex, dont le site est www.jagex.com, est une compagnie de jeux vidéo reconnu pour le jeu "Runescape" gratuit. Ce jeu multijoueur est un third person viewer et son
-# genre est du Massively multiplayer online role-playing game. Le jeu a été publié le 4 janvier 2001. La compagnie a tenu un festival, RuneFest 2019, qui a eu lieu le 4 et 5 octobre 2019.
+#########################
+# Cas 1        
+#########################
+# Jagex, dont le site est www.jagex.com, est une compagnie de jeux vidéo reconnue pour le jeu Runescape gratuit. 
+# Ce jeu multijoueur est un third person viewer et son genre est du Massively multiplayer online role-playing game. 
+# Le jeu a été publié le 4 janvier 2001. La compagnie a tenu un festival, RuneFest 2019, qui a eu lieu le 4 et 5 octobre 2019.
 
 :ThirdPerson 
         a gm:GameViewMode;
@@ -38,10 +41,13 @@
                 schema:endDate "2019-10-05"^^xsd:date;
         ].
 
-#Cas 2:
-# Le jeu Among Us a été développé par une équipe de 3 personnes. Soit Konstantinos et Gordon Ramsay - les game developers,
-# Kim-Jong Un - le game designer. Ce jeu fait partie de PolyGames, une grande compagnie canadienne: www.PolyGamez.tv.
-# Le jeu est uniquement disponible en version digitale.
+
+
+#########################
+# Cas 2       
+#########################
+# Le jeu Among Us a été développé par une équipe de 3 personnes: Konstantinos et Gordon Ramsay, les développeurs, et Kim-Jong Un, le designer. 
+# Ce jeu fait partie de PolyGames, une grande compagnie canadienne: www.PolyGamez.tv. Le jeu est uniquement disponible en version digitale.
 
 :Konstantinos 
         a gm:Creator;
@@ -78,12 +84,18 @@
                 rdfs:comment "Media to distribute game as software by downloading."@en;
         ].
 
-#Cas 3:
-# Avec le nom d'utilisateur "paikwon", Duc joue au jeu Fall Guys Ultimate Knockout, un jeu multijoueur, vu à la troisième personne, de genre Battle Royal, développé par
-# la compagnie Mediatonic et publié (le 16 mai 2011) par la compagnie Devolver Digital qui se veut être 'casual'. Le jeu peut être joué sur PC et PlayStation 4 avec gamepad ou keyboard.
-# Le jeu contient plusieurs maps, soit: Dizzy Heights, See Saw, The Whirlygig, Fruit Chute, Slime Climb et Ocean.
-# Le jeu a aussi des items: Upper Skin, Face, Pattern, Colour et Lower Skin.
+
+
+#########################
+# Cas 3      
+#########################
+# Avec le nom d'utilisateur "paikwon", Duc joue au jeu Fall Guys Ultimate Knockout. Ce jeu casual est un third person multijoueur de genre Battle Royal. 
+# Il a été développé par la compagnie Mediatonic et publié (le 16 mai 2011) par la compagnie Devolver Digital. 
+# Le jeu peut être joué sur PC et PlayStation 4 avec manette ou clavier. 
+# Le jeu contient plusieurs lieux, soit: Dizzy Heights, See Saw, The Whirlygig, Fruit Chute, Slime Climb et Ocean. 
+# Le jeu a aussi des items: Upper Skin, Face, Pattern, Colour et Lower Skin. 
 # Il stream une session de jeu de Fall Guys qui dure 1h30 sur la plateforme de streaming Twitch, il l'appelle: "Duc's Stream".
+
 :FallGuys 
         a schema:VideoGame;
         schema:name "Fall Guys Ultimate Knockout"^^xsd:string;
@@ -216,13 +228,17 @@
                 schema:duration "PT1H30M"^^xsd:duration;
                 gm:game :FallGuys;
         ].
-#Cas 4
-# Bob joue à Terraria sur son PC. Son nom d'utilisateur est Bobby.
-# Ce jeu side-scroller est de genre Platformer et Aventure. 
-# La version originale a été développée par la compagnie Re-Logic et publiée par 505 Games sur PC uniquement le 16 mai 2011 avec gamepad et keyboard.
-# Le jeu permet de se promener entre les lieux suivants: Forests, Deserts, Corruption, Jungle, Snow, Hallow et Ocean.
-# Le jeu permet de collectionner les items suivants: Tool, Weapon, Accessory, Crafting Material, Consumable et Armor.
-# Bob a uniquement complété la quête "Caught in Surface" et a obtenu l'achievement "Hero of Etheria".
+
+
+
+#########################
+# Cas 4      
+#########################
+# Bob joue à Terraria sur son PC. Son nom d'utilisateur est Bobby. Ce jeu side-scroller est de genre Platformer et Aventure. 
+# La version originale a été développée par la compagnie Re-Logic et publiée par 505 Games sur PC uniquement le 16 mai 2011 avec manette et clavier. 
+# Le jeu permet de se promener entre les lieux suivants: Forests, Deserts, Corruption, Jungle, Snow, Hallow et Ocean. 
+# Le jeu permet de collectionner les items suivants: Tool, Weapon, Accessory, Crafting Material, Consumable et Armor. 
+# Bob a uniquement complété la quête "Caught in Surface" et a obtenu l'achievement "Hero of Etheria". 
 # Le jeu est uniquement disponible en version digitale et physique.
 
 :Bob 
@@ -363,10 +379,13 @@
                 ];
         ].
 
-#Cas 5
-# Durant l'Ubisoft Forward du 12 juillet 2020, un événement organisé par Ubisoft, on apprend qu'ils ont développé et publié un jeu single-player gratuit éducatif sur la programmation: Rabbids Coding.
-# Ce jeu est uniquement disponible digitalement sur PC. Le jeu possède 3 quêtes : Bwaaah 1, Bwaaah 2, Bwaaah 3. Après avoir fini le jeu, le joueur obtient l'achievement Code Master.
-# Ils ont streamé l'événement sur leur chaine Youtube, la session a duré 30min.
+#########################
+# Cas 4      
+#########################
+# Durant l'Ubisoft Forward du 12 juillet 2020, un événement organisé par Ubisoft, on apprend qu'ils ont développé et publié un jeu single-player 
+# gratuit éducatif sur la programmation: Rabbids Coding. Ce jeu est uniquement disponible sur PC digitalement. 
+# Le jeu possède 3 quêtes : Bwaaah 1, Bwaaah 2, Bwaaah 3. Après avoir fini le jeu, le joueur obtient l'achievement Code Master. 
+# Ils ont streamé l'événement sur leur chaîne Youtube, la session a duré 30min.
 
 :Forward 
         a gm:GameEvent;
