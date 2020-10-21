@@ -1,0 +1,105 @@
+#########################
+# 2.3.1 N-Triples
+#########################
+
+<exemple.org/Peter_Griffin> <https://schema.org/docs/schema.htmlname> "Peter Griffin"^^<http://www.w3.org/2001/XMLSchema#/string> .
+<exemple.org/Peter_Griffin> <https://schema.org/docs/schema.htmlcity> "Quahog"^^<http://www.w3.org/2001/XMLSchema#/string> .
+<exemple.org/Peter_Griffin> <exemple.org/marriedTo> _:id1 .
+<exemple.org/Peter_Griffin> <exemple.org/parentOf> _:id2 .
+<exemple.org/Peter_Griffin> <exemple.org/worksAt> _:id8 .
+_:id1 <https://schema.org/docs/schema.htmlname> "Lois Griffin"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id1 <https://schema.org/docs/schema.htmlcity> "Quahog"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id3 <https://schema.org/docs/schema.htmlname> "Meg Griffin"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id3 <https://schema.org/docs/schema.htmlcity> "Quahog"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:id3 .
+_:id2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:id4 .
+_:id5 <https://schema.org/docs/schema.htmlname> "Chris Griffin"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id5 <https://schema.org/docs/schema.htmlcity> "Quahog"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:id5 .
+_:id4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:id6 .
+_:id7 <https://schema.org/docs/schema.htmlname> "StewieGriffin"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id7 <https://schema.org/docs/schema.htmlcity> "Quahog"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:id7 .
+_:id6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:id8 <https://schema.org/docs/schema.htmlname> "Service Expedition"^^<http://www.w3.org/2001/XMLSchema#/string> .
+_:id8 <https://schema.org/docs/schema.htmlcity> "Quahog"^^<http://www.w3.org/2001/XMLSchema#/string> .
+
+#########################
+# 2.3.2 RDF/XML
+#########################
+
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:schema="https://schema.org/docs/schema."
+         xmlns:ex="exemple.org/">
+
+    <rdf:Description rdf:about="exemple.org/coursKonstantinos">
+        <schema:htmlname rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">Konstantinos</schema:htmlname>
+        <ex:coursposte>
+        <rdf:Description>
+            <schema:htmlname rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">charge de cours</schema:htmlname>
+            <ex:courschargeDe>
+            <rdf:Description>
+                <schema:htmlname rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">INF8410 Ontologie et web sémantique</schema:htmlname>
+                <ex:courssession rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">Automne 2020</ex:courssession>
+                <ex:coursdebut rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">Septembre 2020</ex:coursdebut>
+                <ex:coursfin rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">Décembre 2020</ex:coursfin>
+                <ex:courscoursDe>
+                <rdf:Description>
+                    <rdf:first>
+                    <rdf:Description>
+                        <schema:htmlname rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">Alice</schema:htmlname>
+                    </rdf:Description>
+                    </rdf:first>
+                    <rdf:rest>
+                    <rdf:Description>
+                        <rdf:first>
+                        <rdf:Description>
+                            <schema:htmlname rdf:datatype="http://www.w3.org/2001/XMLSchema#/string">Bob</schema:htmlname>
+                        </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                    </rdf:rest>
+                </rdf:Description>
+                </ex:courscoursDe>
+            </rdf:Description>
+            </ex:courschargeDe>
+        </rdf:Description>
+        </ex:coursposte>
+    </rdf:Description>
+
+</rdf:RDF>
+
+#########################
+# 2.3.3 Turtle
+#########################
+
+@prefix ex: <exemple.org/>.
+@prefix schema: <https://schema.org/docs/schema.html> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#/>.
+@prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#/>.
+
+ex:Maison_Saint_Gabriel 
+	schema:name "Maison Saint Gabriel"^^xsd:string;
+	a ex:domaine_rural_conventionnel;
+	ex:construit [
+		ex:debut "fin du XVIIe"^^xsd:string;
+		ex:fin "seconde moitié du XIXe"^^xsd:string;
+	];
+	ex:contient (
+	[
+        schema:name "maison de ferme"^^xsd:string; 
+        ex:matériel "moellons"^^xsd:string; 
+        ex:année "1698"^^xsd:string
+      ] 
+	[ 
+        schema:name "grange"^^xsd:string;
+        ex:matériel "pierre"^^xsd:string;
+        ex:année "dernier quart du XIXe"^^xsd:string
+      ] 
+	[
+        schema:name "terrain"^^xsd:string;
+        ex:dimension "1 hectare"^^xsd:string
+     ]
+).
