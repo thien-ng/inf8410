@@ -3,59 +3,80 @@
 @prefix schema: <https://schema.org/docs/schema.html> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 #Cas 1:
 # Jagex, dont le site est www.jagex.com, est une compagnie de jeux vidéo reconnu pour le jeu "Runescape" gratuit. Ce jeu multijoueur est un third person viewer et son
 # genre est du Massively multiplayer online role-playing game. Le jeu a été publié le 4 janvier 2001. La compagnie a tenu un festival, RuneFest 2019, qui a eu lieu le 4 et 5 octobre 2019.
 
-:ThirdPerson a gm:GameViewMode;
-        schema:name "Third Person View"^^xsd:string.
+:ThirdPerson 
+        a gm:GameViewMode;
+        schema:name "Third Person View"^^xsd:string;
+	rdfs:comment "The player is seen from a third person view in-game."@en.
 
-:Jagex a gm:GameCompany;
-    schema:name "Jagex"^^xsd:string;
-    gm:website "www.jagex.com"^^xsd:string;
-    gm:hasDeveloped [
-        a schema:VideoGame; 
-        schema:name "Runescape"^^xsd:string;
-        schema:datePublished "2001-01-04"^^xsd:date;
-        schema:playMode schema:Multiplayer;
-        schema:genre "Multiplayer Online Role-Playing Game"^^xsd:string;
-        gm:gamePrice "0"^^xsd:integer;
-        gm:hasViewMode :ThirdPerson;
-    ];
-    gm:hosts [
-        a gm:GameEvent;
-        gm:hostMedium schema:Festival;
-        schema:name "RuneFest 2019"^^xsd:string;
-        schema:startDate "2019-10-04"^^xsd:date;
-        schema:endDate "2019-10-05"^^xsd:date;
-    ].
+:Jagex 
+        a gm:GameCompany;
+        schema:name "Jagex"^^xsd:string;
+        rdfs:comment "Jagex is a British video game developer."@en;
+        gm:website "www.jagex.com"^^xsd:string;
+        gm:hasDeveloped [
+                a schema:VideoGame; 
+                schema:name "Runescape"^^xsd:string;
+                rdfs:comment "Runescape is a fantasy multiplayer online role-playing game."@en;
+                schema:datePublished "2001-01-04"^^xsd:date;
+                schema:playMode schema:Multiplayer;
+                schema:genre "Multiplayer Online Role-Playing Game"^^xsd:string;
+                gm:gamePrice "0"^^xsd:integer;
+                gm:hasViewMode :ThirdPerson;
+        ];
+        gm:hosts [
+                a gm:GameEvent;
+                gm:hostMedium schema:Festival;
+                schema:name "RuneFest 2019"^^xsd:string;
+                rdfs:comment "RuneFest 2019 was the 9th annual RuneScape convention."@en;
+                schema:startDate "2019-10-04"^^xsd:date;
+                schema:endDate "2019-10-05"^^xsd:date;
+        ].
 
 #Cas 2:
 # Le jeu Among Us a été développé par une équipe de 3 personnes. Soit Konstantinos et Gordon Ramsay - les game developers,
 # Kim-Jong Un - le game designer. Ce jeu fait partie de PolyGames, une grande compagnie canadienne: www.PolyGamez.tv.
 # Le jeu est uniquement disponible en version digitale.
 
-:Konstantinos a gm:Creator;
+:Konstantinos 
+        a gm:Creator;
         schema:name "Konstantinos Lambrou-Latreille"^^xsd:string;
+        rdfs:comment "Konstantinos is a game developer at PolyGames."@en;
         gm:role "Game Developer"^^xsd:string.
 
-:Gordon a gm:Creator;
+:Gordon 
+        a gm:Creator;
         schema:name "Gordon Ramsay"^^xsd:string;
+        rdfs:comment "Gordon Ramsay is a chef and a game developer at PolyGames."@en;
         gm:role "Game Developer"^^xsd:string.
 
-:KimJongUn a gm:Creator;
+:KimJongUn 
+        a gm:Creator;
         schema:name "Kim-Jong Un"^^xsd:string;
+        rdfs:comment "Kim-Jong Un is a designer at PolyGames."@en;
         gm:role "Game Designer"^^xsd:string.
 
-:AmongUs a schema:VideoGame;
-    gm:gameOwnedBy [
-        a gm:GameCompany;
-        schema:name "PolyGames"^^xsd:string;
-        gm:website "www.PolyGamez.tv"^^xsd:string;
-    ];
-    gm:createdBy (:Konstantinos :Gordon :KimJongUn);
-    gm:format [ a gm:Media; schema:name "Digital"^^xsd:string; ] .
+:AmongUs 
+        a schema:VideoGame;
+        schema:name "Among Us"^^xsd:string;
+        rdfs:comment "Among Us is an online social deduction game."@en;
+        gm:gameOwnedBy [
+                a gm:GameCompany;
+                schema:name "PolyGames"^^xsd:string;
+                rdfs:comment "PolyGames is a game developer company based in Montreal."@en;
+                gm:website "www.PolyGamez.tv"^^xsd:string;
+        ];
+        gm:createdBy (:Konstantinos :Gordon :KimJongUn);
+        gm:format [ 
+                a gm:Media; 
+                schema:name "Digital"^^xsd:string; 
+                rdfs:comment "Media to distribute game as software by downloading."@en;
+        ].
 
 #Cas 3:
 # Avec le nom d'utilisateur "paikwon", Duc joue au jeu Fall Guys Ultimate Knockout, un jeu multijoueur, vu à la troisième personne, de genre Battle Royal, développé par
@@ -63,39 +84,135 @@
 # Le jeu contient plusieurs maps, soit: Dizzy Heights, See Saw, The Whirlygig, Fruit Chute, Slime Climb et Ocean.
 # Le jeu a aussi des items: Upper Skin, Face, Pattern, Colour et Lower Skin.
 # Il stream une session de jeu de Fall Guys qui dure 1h30 sur la plateforme de streaming Twitch, il l'appelle: "Duc's Stream".
-:FallGuys a schema:VideoGame;
+:FallGuys 
+        a schema:VideoGame;
         schema:name "Fall Guys Ultimate Knockout"^^xsd:string;
+        rdfs:comment "Fall Guys is a massively multiplayer party game."@en;
         schema:playMode schema:Multiplayer;
-        gm::hasViewMode [ a gm:GameViewMode;schema:name "Third Person View"^^xsd:string; ];
+        gm::hasViewMode [ 
+                a gm:GameViewMode;
+                schema:name "Third Person View"^^xsd:string;
+                rdfs:comment "The player's is seen from a third person view in-game."@en;
+        ];
         schema:genre "Battle Royal"^^xsd:string;
-        gm:gameOwnedBy [ a gm:GameCompany; schema:name "Mediatonic"^^xsd:string; ];
-        gm:publishedBy [ a gm:GameCompany; schema:name "Devolver Digital"^^xsd:string; ];
-        gm:hasIntent [ a gm:Intention; schema:name "Casual gaming"^^xsd:string; ];
-        schema:gamePlatform ([ a gm:Console; schema:name "PC"^^xsd:string; ] [ a gm:Console; schema:name "PlayStation 4"^^xsd:string; ]);
-        schema:datePublished "2011-05-16"^^xsd:date;
-        gm:playedWith ([ a gm:Controller; schema:name "Gamepad"^^xsd:string; ] [ a gm:Controller; schema:name "Keyboard"^^xsd:string; ]);
-        schema:gameLocation ([ a gm:GameLocation; schema:name "Dizzy Heights"^^xsd:string; ] 
-                             [ a gm:GameLocation; schema:name "See Saw"^^xsd:string; ]
-                             [ a gm:GameLocation; schema:name "The Whirlygig"^^xsd:string; ]
-                             [ a gm:GameLocation; schema:name "Fruit Chute"^^xsd:string; ]
-                             [ a gm:GameLocation; schema:name "Slime Climb"^^xsd:string; ]
-                             [ a gm:GameLocation; schema:name "Ocean"^^xsd:string; ]                                        
+        gm:gameOwnedBy [ 
+                a gm:GameCompany; 
+                schema:name "Mediatonic"^^xsd:string;
+                rdfs:comment "Mediatonic is a British video game developer."@en;
+        ];
+        gm:publishedBy [ 
+                a gm:GameCompany;
+                schema:name "Devolver Digital"^^xsd:string;
+                rdfs:comment "Devolver Digital is an American video game publisher."@en;
+        ];
+        gm:hasIntent [ 
+                a gm:Intention;
+                schema:name "Casual gaming"^^xsd:string;
+                rdfs:comment "Video game targeted at a wide, mass market audience."@en;
+        ];
+        schema:gamePlatform (
+                [ 
+                        a gm:Console; 
+                        schema:name "PC"^^xsd:string;
+                        rdfs:comment "Computer for individual use."@en;
+
+                ] 
+                [ 
+                        a gm:Console;
+                        schema:name "PlayStation 4"^^xsd:string; 
+                        rdfs:comment "The PlayStation 4 (PS4) is a home video game console."@en;
+                ]
         );
-        schema:gameItem ([ a gm:GameItem; schema:name "Upper Skin"^^xsd:string; ] 
-                         [ a gm:GameItem; schema:name "Face"^^xsd:string; ]
-                         [ a gm:GameItem; schema:name "Pattern"^^xsd:string; ]
-                         [ a gm:GameItem; schema:name "Colour"^^xsd:string; ]
-                         [ a gm:GameItem; schema:name "Lower Skin"^^xsd:string; ]
+        schema:datePublished "2011-05-16"^^xsd:date;
+        gm:playedWith (
+                [ 
+                        a gm:Controller;
+                        schema:name "Gamepad"^^xsd:string;
+                        rdfs:comment "Game controller held in two hands."@en;
+
+                ] 
+                [ 
+                        a gm:Controller; 
+                        schema:name "Keyboard"^^xsd:string; 
+                        rdfs:comment "A keyboard is a typewriter-style device."@en;
+                ]
+        );
+        schema:gameLocation (
+                [ 
+                        a gm:GameLocation; 
+                        schema:name "Dizzy Heights"^^xsd:string; 
+                        rdfs:comment "A high location in the game Fall Guys."@en; 
+                ] 
+                [ 
+                        a gm:GameLocation; 
+                        schema:name "See Saw"^^xsd:string; 
+                        rdfs:comment "A location with spikes in the game Fall Guys."@en; 
+                ]
+                [ 
+                        a gm:GameLocation; 
+                        schema:name "The Whirlygig"^^xsd:string; 
+                        rdfs:comment "A rotating location in the game Fall Guys."@en; 
+                ]
+                [ 
+                        a gm:GameLocation; 
+                        schema:name "Fruit Chute"^^xsd:string; 
+                        rdfs:comment "A location with fruits in the game Fall Guys."@en; 
+                ]
+                [ 
+                        a gm:GameLocation; 
+                        schema:name "Slime Climb"^^xsd:string; 
+                        rdfs:comment "A slimy location in the game Fall Guys."@en; 
+                ]
+                [ 
+                        a gm:GameLocation; 
+                        schema:name "Ocean"^^xsd:string; 
+                        rdfs:comment "A location with water in the game Fall Guys."@en; 
+                ]                                        
+        );
+        schema:gameItem (
+                [ 
+                        a gm:GameItem; 
+                        schema:name "Upper Skin"^^xsd:string; 
+                        rdfs:comment "A wearable item in the game Fall Guys for the upper body."@en; 
+                ] 
+                [ 
+                        a gm:GameItem; 
+                        schema:name "Face"^^xsd:string; 
+                        rdfs:comment "A wearable item in the game Fall Guys for the face."@en; 
+                ]
+                [ 
+                        a gm:GameItem; 
+                        schema:name "Pattern"^^xsd:string; 
+                        rdfs:comment "A wearable item in the game Fall Guys for the whole body."@en; 
+                ]
+                [ 
+                        a gm:GameItem; 
+                        schema:name "Colour"^^xsd:string; 
+                        rdfs:comment "A wearable item in the game Fall Guys for the whole body."@en; 
+                ]
+                [ 
+                        a gm:GameItem; 
+                        schema:name "Lower Skin"^^xsd:string; 
+                        rdfs:comment "A wearable item in the game Fall Guys for the lower body."@en; 
+                ]
         ).
 
-:Duc a gm:User;
+:Duc 
+        a gm:User;
         schema:name "Duc"^^xsd:string;
+        rdfs:comment "A user named Duc."@en;
         gm:username "paikwon"^^xsd:string;
         gm:plays :FallGuys;
         gm:streams [ 
                 a gm:StreamSession;
-                gm:streamedOn [a gm:Stream; schema:name "Twitch"^^xsd:string;];
+                gm:streamedOn [
+                        a gm:Stream; 
+                        schema:name "Twitch"^^xsd:string;
+                        rdfs:comment "Twitch is a streaming platform."@en;
+
+                ];
                 schema:name "Duc's Stream of Fall Guys"^^xsd:string;
+                rdfs:comment "Duc's streaming session of him playing Fall Guys."@en;
                 schema:duration "PT1H30M"^^xsd:duration;
                 gm:game :FallGuys;
         ].
@@ -108,39 +225,142 @@
 # Bob a uniquement complété la quête "Caught in Surface" et a obtenu l'achievement "Hero of Etheria".
 # Le jeu est uniquement disponible en version digitale et physique.
 
-:Bob a gm:User;
+:Bob 
+        a gm:User;
         schema:name "Bob"^^xsd:string;
-        gm:playsOn [a gm:Console; schema:name "PC"^^xsd:string;];
+        rdfs:comment "A user named Bob."@en;
+        gm:playsOn [
+                a gm:Console; 
+                schema:name "PC"^^xsd:string;
+                rdfs:comment "A personal computer is a multi-purpose computer for individual use."@en;
+        ];
         gm:username "Bobby"^^xsd:string;
         gm:plays [
                 a schema:VideoGame;
                 schema:name "Terraria"^^xsd:string;
-                gm::hasViewMode [ a gm:GameViewMode;schema:name "Side-Scroller View"^^xsd:string; ];
+                rdfs:comment "Terraria is an action-adventure platformer game developed by Re-Logic."@en;
+                gm::hasViewMode [ 
+                        a gm:GameViewMode;
+                        schema:name "Side-Scroller View"^^xsd:string;
+                        rdfs:comment "Gameplay action is viewed from a side-view camera angle, the screen scrolls with with player."@en;
+                ];
                 schema:genre ("Platformer"^^xsd:string "Aventure"^^xsd:string);
-                gm:gameOwnedBy [ a gm:GameCompany; schema:name "Re-Logic"^^xsd:string; ];
-                gm:publishedBy [ a gm:GameCompany; schema:name "505 Games"^^xsd:string; ];
-                schema:gamePlatform [a gm:Console; schema:name "PC"^^xsd:string; ];
+                gm:gameOwnedBy [ 
+                        a gm:GameCompany; 
+                        schema:name "Re-Logic"^^xsd:string; 
+                        rdfs:comment "Re-Logic is an American independent game developer and publisher."@en;
+                ];
+                gm:publishedBy [ 
+                        a gm:GameCompany; 
+                        schema:name "505 Games"^^xsd:string;
+                        rdfs:comment "505 Games is an Italian video game publisher."@en; 
+                ];
+                schema:gamePlatform [
+                        a gm:Console; 
+                        schema:name "PC"^^xsd:string;
+                        rdfs:comment "A personal computer is a multi-purpose computer for individual use."@en;
+                ];
                 schema:datePublished "2011-05-16"^^xsd:date;
-                gm:playedWith ([ a gm:Controller; schema:name "Gamepad"^^xsd:string; ] [ a gm:Controller; schema:name "Keyboard"^^xsd:string; ]);
-                schema:gameLocation ([ a schema:Place; schema:name "Forests"^^xsd:string; ] 
-                                     [ a schema:Place; schema:name "Deserts"^^xsd:string; ]
-                                     [ a schema:Place; schema:name "Corruption"^^xsd:string; ]
-                                     [ a schema:Place; schema:name "Snow"^^xsd:string; ]
-                                     [ a schema:Place; schema:name "Hallow"^^xsd:string; ]
-                                     [ a schema:Place; schema:name "Ocean"^^xsd:string; ]                                        
+                gm:playedWith (
+                        [ 
+                                a gm:Controller;
+                                schema:name "Gamepad"^^xsd:string;
+                                rdfs:comment "A gamepad is a type of game controller held in two hands."@en;
+
+                        ] 
+                        [ 
+                                a gm:Controller; 
+                                schema:name "Keyboard"^^xsd:string; 
+                                rdfs:comment "A keyboard uses an arrangement of keys to act as electronic switches."@en;
+                        ]
                 );
-                schema:gameItem ([ a gm:GameItem; schema:name "Tool"^^xsd:string; ] 
-                                 [ a gm:GameItem; schema:name "Weapon"^^xsd:string; ]
-                                 [ a gm:GameItem; schema:name "Accessory"^^xsd:string; ]
-                                 [ a gm:GameItem; schema:name "Crafting Material"^^xsd:string; ]
-                                 [ a gm:GameItem; schema:name "Consumable"^^xsd:string; ]
-                                 [ a gm:GameItem; schema:name "Armor"^^xsd:string; ]                                        
+                schema:gameLocation (
+                        [ 
+                                a schema:Place; 
+                                schema:name "Forests"^^xsd:string; 
+                                rdfs:comment "Location with a lot of trees in Terraria."@en;
+                        ] 
+                        [ 
+                                a schema:Place; 
+                                schema:name "Deserts"^^xsd:string; 
+                                rdfs:comment "Dry sandy location in Terraria."@en;
+                        ]
+                        [ 
+                                a schema:Place; 
+                                schema:name "Corruption"^^xsd:string; 
+                                rdfs:comment "Location filled with enemies in Terraria."@en;
+                        ]
+                        [ 
+                                a schema:Place; 
+                                schema:name "Snow"^^xsd:string; 
+                                rdfs:comment "Snowy location in Terraria."@en;
+                        ]
+                        [ 
+                                a schema:Place; 
+                                schema:name "Hallow"^^xsd:string; 
+                                rdfs:comment "Hard location in Terraria."@en;
+                        ]
+                        [ 
+                                a schema:Place; 
+                                schema:name "Ocean"^^xsd:string;
+                                 rdfs:comment "Location with ocean in Terraria."@en;
+                        ]                                        
                 );
-                gm:format ([ a gm:Media; schema:name "Physical"^^xsd:string; ] [ a gm:Media; schema:name "Digital"^^xsd:string; ] )
+                schema:gameItem (
+                        [ 
+                                a gm:GameItem; 
+                                schema:name "Tool"^^xsd:string; 
+                                rdfs:comment "Item used to craft in Terraria."@en; 
+                        ] 
+                        [ 
+                                a gm:GameItem; 
+                                schema:name "Weapon"^^xsd:string; 
+                                rdfs:comment "Item used to battle in Terraria."@en; 
+                        ]
+                        [ 
+                                a gm:GameItem; 
+                                schema:name "Accessory"^^xsd:string; 
+                                rdfs:comment "Item used to decorate in Terraria."@en; 
+                        ]
+                        [ 
+                                a gm:GameItem; 
+                                schema:name "Crafting Material"^^xsd:string; 
+                                rdfs:comment "Item used to craft in Terraria."@en; 
+                        ]
+                        [ 
+                                a gm:GameItem; 
+                                schema:name "Consumable"^^xsd:string;
+                                rdfs:comment "Item used to consume in Terraria."@en; 
+                        ]
+                        [ 
+                                a gm:GameItem; 
+                                schema:name "Armor"^^xsd:string; 
+                                rdfs:comment "Item used for defense in Terraria."@en; 
+                        ]                                        
+                );
+                gm:format (
+                        [ 
+                                a gm:Media; 
+                                schema:name "Physical"^^xsd:string; 
+                                rdfs:comment "Media to distribute game as a physical copy."@en; 
+                        ] 
+                        [ 
+                                a gm:Media; 
+                                schema:name "Digital"^^xsd:string; 
+                                rdfs:comment "Media to distribute game as software by downloading."@en; 
+                        ] )
         ];
         gm:hasCompleted [
-                schema:quest   [ a gm:GameQuest; schema:name "Caught in Surface"^^xsd:string; ];
-                gm:achievement [ a gm:GameAchievement; schema:name "Hero of Etheria"^^xsd:string; ];
+                schema:quest   [ 
+                        a gm:GameQuest; 
+                        schema:name "Caught in Surface"^^xsd:string; 
+                        rdfs:comment "Quest to catch fish in Terraria."@en;
+                ];
+                gm:achievement [ 
+                        a gm:GameAchievement; 
+                        schema:name "Hero of Etheria"^^xsd:string; 
+                        rdfs:comment "Achievement to catch 100 fish in Terraria."@en; 
+                ];
         ].
 
 #Cas 5
@@ -148,32 +368,72 @@
 # Ce jeu est uniquement disponible digitalement sur PC. Le jeu possède 3 quêtes : Bwaaah 1, Bwaaah 2, Bwaaah 3. Après avoir fini le jeu, le joueur obtient l'achievement Code Master.
 # Ils ont streamé l'événement sur leur chaine Youtube, la session a duré 30min.
 
-:Forward a gm:GameEvent;
+:Forward 
+        a gm:GameEvent;
         schema:name "Ubisoft Forward"^^xsd:string;
+        rdfs:comment "Online conference hosted and streamed by Ubisoft on their games."@en;
         schema:startDate "2020-07-12"^^xsd:date;
         schema:endDate "2020-07-12"^^xsd:date;
         gm:hostMedium [ 
                 a gm:StreamSession;
                 schema:name "Ubisoft Stream"^^xsd:string;
-                gm:streamedOn [a gm:Stream; schema:name "Youtube"^^xsd:string;];
+                rdfs:comment "Ubisoft streamed their conference Ubisoft Forward on their Youtube channel."@en;
+                gm:streamedOn [
+                        a gm:Stream; 
+                        schema:name "Youtube"^^xsd:string;
+                        rdfs:comment "YouTube is an online video-sharing platform."@en;
+                ];
                 schema:duration "PT30M"^^xsd:duration;
         ].
 
-:Ubisoft a gm:GameCompany;
+:Ubisoft 
+        a gm:GameCompany;
         schema:name "Ubisoft"^^xsd:string;
+        rdfs:comment "Ubisoft is a French video game company."@en;
         gm:hosts :Forward.
 
-:Rabbids a schema:VideoGame;
+:Rabbids 
+        a schema:VideoGame;
         schema:name "Rabbids Coding"^^xsd:string;
+        rdfs:comment "Rabbids Coding is a game to learn the basics of programming."@en;
         schema:playMode schema:SinglePlayer;
         gm:price "0"^^xsd:integer;
         gm:gameOwnedBy :Ubisoft;
         gm:publishedBy :Ubisoft;
-        gm:hasIntent [ a gm:Intention; schema:name "Educational gaming"^^xsd:string; ];
-        gm:format [ a gm:Media; schema:name "Digital"^^xsd:string; ];
-        schema:gamePlatform [a gm:Console; schema:name "PC"^^xsd:string;];
-        schema:quest ([ a gm:GameQuest; schema:name "Bwaaah 1"^^xsd:string; ]
-                      [ a gm:GameQuest; schema:name "Bwaaah 2"^^xsd:string; ]
-                      [ a gm:GameQuest; schema:name "Bwaaah 3"^^xsd:string; ]
+        gm:hasIntent [ 
+                a gm:Intention; 
+                schema:name "Educational gaming"^^xsd:string;
+                rdfs:comment "Explicitly designed with educational purposes."@en;
+        ];
+        gm:format [ 
+                a gm:Media; 
+                schema:name "Digital"^^xsd:string; 
+                rdfs:comment "Media to distribute game as software by downloading."@en
+        ];
+        schema:gamePlatform [
+                a gm:Console; 
+                schema:name "PC"^^xsd:string; 
+                rdfs:comment "Computer for individual use."@en
+        ];
+        schema:quest (
+                [ 
+                        a gm:GameQuest; 
+                        schema:name "Bwaaah 1"^^xsd:string; 
+                        rdfs:comment "Quest at the level 5 in Rabbids Coding."@en
+                ]
+                [ 
+                        a gm:GameQuest; 
+                        schema:name "Bwaaah 2"^^xsd:string; 
+                        rdfs:comment "Quest at the level 10 in Rabbids Coding."@en
+                ]
+                [ 
+                        a gm:GameQuest; 
+                        schema:name "Bwaaah 3"^^xsd:string; 
+                        rdfs:comment "Quest at the level 20 in Rabbids Coding."@en
+                ]
         );
-        gm:achievement [ a gm:GameAchievement; schema:name "Code Master"^^xsd:string; ].
+        gm:achievement [ 
+                a gm:GameAchievement; 
+                schema:name "Code Master"^^xsd:string; 
+                rdfs:comment "Achievement at the end of the game in Rabbids Coding."@en
+        ].
