@@ -8,114 +8,134 @@
 # Classes         
 #########################
 
-gm:GameCompany a rdfs:class;
-			rdfs:subClassOf schema:Corporation;
-			rdfs:comment "Company that manufactures or provides service related to games."@en;
-			rdfs:label "Game company"@en.
+gm:GameCompany 
+	a rdfs:class;
+	rdfs:subClassOf schema:Corporation;
+	rdfs:comment "Company that manufactures or provides service related to games."@en;
+	rdfs:label "Game company"@en.
 
-gm:Controller a rdfs:class;
-			rdfs:subClassOf schema:Thing;
-			rdfs:comment "Tool used to give input from user to game."@en;
-			rdfs:label "Game controller"@en.
+gm:Controller 
+	a rdfs:class;
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "Tool used to give input from user to game."@en;
+	rdfs:label "Game controller"@en.
 
-gm:Intention a rdfs:class;
-			rdfs:subClassOf schema:Thing;
-			rdfs:comment "Intention of the game developed."@en;
-			rdfs:label "Game intention"@en.
+gm:Intention 
+	a rdfs:class;
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "Intention of the game developed."@en;
+	rdfs:label "Game intention"@en.
 
-gm:Media a rdfs:class;
-		rdfs:subClassOf schema:MediaObject;
-		rdfs:comment "Media format to distribute games."@en;
-		rdfs:label "Game Media"@en.
+gm:Media 
+	a rdfs:class;
+	rdfs:subClassOf schema:MediaObject;
+	rdfs:comment "Media format to distribute games."@en;
+	rdfs:label "Game Media"@en.
 
-gm:Platform a rdfs:class;
-		rdfs:subClassOf schema:Thing;
-		rdfs:comment "Platform on which the game is displayed or ran on."@en;
-		rdfs:label "Game Platform"@en.
+gm:Platform 
+	a rdfs:class;
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "Platform on which the game is displayed or ran on."@en;
+	rdfs:label "Game Platform"@en.
 
-gm:Console a rdfs:class;
-		rdfs:subClassOf gm:Platform;
-		rdfs:comment "Tool used to run a game."@en;
-		rdfs:label "Game Console"@en.
+gm:Console 
+	a rdfs:class;
+	rdfs:subClassOf gm:Platform;
+	rdfs:comment "Tool used to run a game."@en;
+	rdfs:label "Game Console"@en.
 
-gm:Stream a rdfs:class;
-		rdfs:subClassOf gm:Platform;
-		rdfs:comment "Service provider to stream gaming content."@en;
-		rdfs:label "Game Streaming"@en.
+gm:Stream 
+	a rdfs:class;
+	rdfs:subClassOf gm:Platform;
+	rdfs:comment "Service provider to stream gaming content."@en;
+	rdfs:label "Game Streaming"@en.
 
-gm:StreamSession a rdfs:class;
-		rdfs:subClassOf schema:ScreeningEvent;
-		rdfs:comment "Session of streaming."@en;
-		rdfs:label "Streaming Session"@en.
+gm:StreamSession 
+	a rdfs:class;
+	rdfs:subClassOf schema:ScreeningEvent;
+	rdfs:comment "Session of streaming."@en;
+	rdfs:label "Streaming Session"@en.
 
-gm:Creator a rdfs:class;
-		rdfs:subClassOf schema:Person;
-		rdfs:comment "A person who works on the game's developement."@en;
-		rdfs:label "Game creator"@en.
+gm:Creator 
+	a rdfs:class;
+	rdfs:subClassOf schema:Person;
+	rdfs:comment "A person who works on the game's developement."@en;
+	rdfs:label "Game creator"@en.
 
-gm:User a rdfs:class;
-		rdfs:subClassOf schema:Person;
-		rdfs:comment "A person who plays the game."@en;
-		rdfs:label "Gamer"@en.
+gm:User 
+	a rdfs:class;
+	rdfs:subClassOf schema:Person;
+	rdfs:comment "A person who plays the game."@en;
+	rdfs:label "Gamer"@en.
 
-gm:GameEvent a rdfs:class;
-			rdfs:subClassOf schema:Event;
-			rdfs:comment "Event dedicated for the gaming industry."@en;
-			rdfs:label "Game Event"@en.
+gm:GameEvent 
+	a rdfs:class;
+	rdfs:subClassOf schema:Event;
+	rdfs:comment "Event dedicated for the gaming industry."@en;
+	rdfs:label "Game Event"@en.
 
-gm:GameViewMode a rdfs:class;
-			rdfs:subClassOf schema:Thing;
-			rdfs:comment "The way how a player will see the game."@en;
-			rdfs:label "Game view mode"@en.
+gm:GameViewMode 
+	a rdfs:class;
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "The way how a player will see the game."@en;
+	rdfs:label "Game view mode"@en.
 
 # Inside a game
-gm:GameItem a rdfs:class;
-		rdfs:subClassOf schema:Thing;
-		rdfs:comment "Any item inside a game."@en;
-		rdfs:label "Game item"@en.
+gm:GameItem 
+	a rdfs:class;
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "Any item inside a game."@en;
+	rdfs:label "Game item"@en.
 
-gm:GameLocation a rdfs:class;
-		rdfs:subClassOf schema:Place;
-		rdfs:comment "A place inside a game."@en;
-		rdfs:label "Game location"@en.
+gm:GameLocation 
+	a rdfs:class;
+	rdfs:subClassOf schema:Place;
+	rdfs:comment "A place inside a game."@en;
+	rdfs:label "Game location"@en.
 
-gm:GameQuest a rdfs:class;
-		rdfs:subClassOf schema:Thing;
-		rdfs:comment "A quest inside a game."@en;
-		rdfs:label "Game quest"@en.
+gm:GameQuest 
+	a rdfs:class;
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "A quest inside a game."@en;
+	rdfs:label "Game quest"@en.
 
-gm:GameAchievement a rdfs:class;
-		rdfs:subClassOf schema:Thing;
-		rdfs:comment "An achievement inside a game."@en;
-		rdfs:label "Game achievement"@en.
+gm:GameAchievement 
+	a rdfs:class;
+	rdfs:subClassOf schema:Thing;
+	rdfs:comment "An achievement inside a game."@en;
+	rdfs:label "Game achievement"@en.
 
 #########################
 # Data Properties         
 #########################
 
 # Game company
-gm:website a rdf:Property;
-		rdfs:label "Website"@en;
-		rdfs:comment "Company's website"@en;
-		rdfs:domain gm:GameCompany;
-		rdfs:range xsd:string.
+gm:website 
+	a rdf:Property;
+	rdfs:label "Website"@en;
+	rdfs:comment "Company's website"@en;
+	rdfs:domain gm:GameCompany;
+	rdfs:range xsd:string.
 
 # Creator
-gm:role a rdf:Property;
+gm:role 
+	a rdf:Property;
 	rdfs:label "Role"@en;
 	rdfs:comment "Role of creator"@en;
 	rdfs:domain gm:Creator;
 	rdfs:range xsd:string.
 
 # User
-gm:username a rdf:Property;
+gm:username 
+	a rdf:Property;
 	rdfs:label "Name"@en;
 	rdfs:comment "Gamer's username"@en;
 	rdfs:domain gm:User;
 	rdfs:range xsd:string.
 
 # Game
-gm:gamePrice a rdf:Property;
+gm:gamePrice 
+	a rdf:Property;
 	rdfs:label "Game price"@en;
 	rdfs:comment "Price of a game"@en;
 	rdfs:domain schema:VideoGame;
@@ -127,107 +147,124 @@ gm:gamePrice a rdf:Property;
 #########################
 
 # Company
-gm:hasDeveloped a rdf:Property;
-		rdfs:label "Has developed"@en;
-		rdfs:comment "Company has developed a video game"@en;
-		rdfs:domain gm:GameCompany;
-		rdfs:range schema:VideoGame.
+gm:hasDeveloped 
+	a rdf:Property;
+	rdfs:label "Has developed"@en;
+	rdfs:comment "Company has developed a video game"@en;
+	rdfs:domain gm:GameCompany;
+	rdfs:range schema:VideoGame.
 
-gm:hosts a rdf:Property;
-		rdfs:label "hosts"@en;
-		rdfs:comment "Company hosts a game related event"@en;
-		rdfs:domain gm:GameCompany;
-		rdfs:range gm:GameEvent.
+gm:hosts 
+	a rdf:Property;
+	rdfs:label "hosts"@en;
+	rdfs:comment "Company hosts a game related event"@en;
+	rdfs:domain gm:GameCompany;
+	rdfs:range gm:GameEvent.
 
 # Video game
-gm:game a rdf:Property;
-		rdfs:label "Game"@en;
-		rdfs:comment "Refers to a video game"@en;
-		rdfs:range schema:VideoGame.
+gm:game 
+	a rdf:Property;
+	rdfs:label "Game"@en;
+	rdfs:comment "Refers to a video game"@en;
+	rdfs:range schema:VideoGame.
 
-gm:gameOwnedBy a rdf:Property;
-		rdfs:label "Game owned by"@en;
-		rdfs:comment "Video game is owned by a company"@en;
-		rdfs:domain schema:VideoGame;
-		rdfs:range gm:GameCompany.
+gm:gameOwnedBy 
+	a rdf:Property;
+	rdfs:label "Game owned by"@en;
+	rdfs:comment "Video game is owned by a company"@en;
+	rdfs:domain schema:VideoGame;
+	rdfs:range gm:GameCompany.
 
-gm:publishedBy a rdf:Property;
-			rdfs:label "published by"@en;
-			rdfs:comment "Video game is published by a company"@en;
-			rdfs:domain schema:VideoGame;
-			rdfs:range gm:GameCompany.
+gm:publishedBy 
+	a rdf:Property;
+	rdfs:label "published by"@en;
+	rdfs:comment "Video game is published by a company"@en;
+	rdfs:domain schema:VideoGame;
+	rdfs:range gm:GameCompany.
 
-gm:hasViewMode a rdf:Property;
-			rdfs:label "has view mode"@en;
-			rdfs:comment "Video game has a view mode"@en;
-			rdfs:domain schema:VideoGame;
-			rdfs:range gm:GameViewMode.	
+gm:hasViewMode 
+	a rdf:Property;
+	rdfs:label "has view mode"@en;
+	rdfs:comment "Video game has a view mode"@en;
+	rdfs:domain schema:VideoGame;
+	rdfs:range gm:GameViewMode.	
 
-gm:hasIntent a rdf:Property;
-			rdfs:label "has intent"@en;
-			rdfs:comment "Video game has an intent"@en;
-			rdfs:domain schema:VideoGame;
-			rdfs:range gm:Intention.
+gm:hasIntent 
+	a rdf:Property;
+	rdfs:label "has intent"@en;
+	rdfs:comment "Video game has an intent"@en;
+	rdfs:domain schema:VideoGame;
+	rdfs:range gm:Intention.
 
-gm:playedWith a rdf:Property;
-			rdfs:label "played with"@en;
-			rdfs:comment "Video game can be played with a controller"@en;
-			rdfs:domain schema:VideoGame;
-			rdfs:range gm:Controller.
+gm:playedWith 
+	a rdf:Property;
+	rdfs:label "played with"@en;
+	rdfs:comment "Video game can be played with a controller"@en;
+	rdfs:domain schema:VideoGame;
+	rdfs:range gm:Controller.
 
-gm:format a rdf:Property;
-		rdfs:label "format"@en;
-		rdfs:comment "Video game can be distributed as a kind format"@en;
-		rdfs:domain schema:VideoGame;
-		rdfs:range gm:Media.
+gm:format 
+	a rdf:Property;
+	rdfs:label "format"@en;
+	rdfs:comment "Video game can be distributed as a kind format"@en;
+	rdfs:domain schema:VideoGame;
+	rdfs:range gm:Media.
 
 # Stream
-gm:streamedOn a rdf:Property;
-		rdfs:label "stream on"@en;
-		rdfs:comment "Stream session can be streamed on a streaming platform"@en;
-		rdfs:domain gm:StreamSession;
-		rdfs:range gm:Stream.
+gm:streamedOn 
+	a rdf:Property;
+	rdfs:label "stream on"@en;
+	rdfs:comment "Stream session can be streamed on a streaming platform"@en;
+	rdfs:domain gm:StreamSession;
+	rdfs:range gm:Stream.
 
-gm:streams a rdf:Property;
-			rdfs:label "streams"@en;
-			rdfs:comment "Streams a stream session"@en;
-			rdfs:range gm:StreamSession.
+gm:streams 
+	a rdf:Property;
+	rdfs:label "streams"@en;
+	rdfs:comment "Streams a stream session"@en;
+	rdfs:range gm:StreamSession.
 
 # User
-gm:playsOn a rdf:Property;
-			rdfs:label "plays on"@en;
-			rdfs:comment "User plays on a console"@en;
-			rdfs:domain gm:User;
-			rdfs:range gm:Console.
+gm:playsOn 
+	a rdf:Property;
+	rdfs:label "plays on"@en;
+	rdfs:comment "User plays on a console"@en;
+	rdfs:domain gm:User;
+	rdfs:range gm:Console.
 
-gm:plays a rdf:Property;
-			rdfs:label "plays"@en;
-			rdfs:comment "User plays a video game"@en;
-			rdfs:domain gm:User;
-			rdfs:range schema:VideoGame.
+gm:plays 
+	a rdf:Property;
+	rdfs:label "plays"@en;
+	rdfs:comment "User plays a video game"@en;
+	rdfs:domain gm:User;
+	rdfs:range schema:VideoGame.
 
 # Creator
-gm:createdBy a rdf:Property;
-		rdfs:label "created by"@en;
-		rdfs:comment "Game was created by a creator"@en;
-		rdfs:domain gm:Creator;
-		rdfs:range schema:VideoGame.
+gm:createdBy
+	a rdf:Property;
+	rdfs:label "created by"@en;
+	rdfs:comment "Game was created by a creator"@en;
+	rdfs:domain gm:Creator;
+	rdfs:range schema:VideoGame.
 
 # Game Event
-gm:hostMedium a rdf:Property;
-		rdfs:label "host type"@en;
-		rdfs:comment "Game event is hosted through a kind of event (medium)"@en;
-		rdfs:domain gm:GameEvent;
-		rdfs:range schema:Event.
+gm:hostMedium 
+	a rdf:Property;
+	rdfs:label "host type"@en;
+	rdfs:comment "Game event is hosted through a kind of event (medium)"@en;
+	rdfs:domain gm:GameEvent;
+	rdfs:range schema:Event.
 
 # Inside Game
-gm:hasCompleted a rdf:Property;
-		rdfs:label "has completed"@en;
-		rdfs:comment "User has completed something"@en;
-		rdfs:domain gm:User.
+gm:hasCompleted 
+	a rdf:Property;
+	rdfs:label "has completed"@en;
+	rdfs:comment "User has completed something"@en;
+	rdfs:domain gm:User.
 
-gm:achievement a rdf:Property;
-		rdfs:label "achievement"@en;
-		rdfs:comment "Refers to an accomplishment earned by performing various tasks"@en;
-		rdfs:range gm:GameAchievement.
+gm:achievement 
+	a rdf:Property;
+	rdfs:label "achievement"@en;
+	rdfs:comment "Refers to an accomplishment earned by performing various tasks"@en;
+	rdfs:range gm:GameAchievement.
 
