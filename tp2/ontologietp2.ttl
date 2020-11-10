@@ -1,0 +1,453 @@
+@prefix : <http://www.exemple.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+#########################
+#       Classes         #
+#########################
+
+:Person a rdfs:Class;
+	rdfs:label "Personne"@fr.
+	
+:Student a rdfs:Class;
+	rdfs:subClassOf :Person;
+	rdfs:label "Etudiant"@fr.
+	
+:Teacher a rdfs:Class;
+	rdfs:subClassOf :Person;
+	rdfs:label "Professeur"@fr.
+	
+:Class a rdfs:Class;
+	rdfs:label "Cours"@fr.
+	
+:Session a rdfs:Class;
+	rdfs:label "Session"@fr.
+	
+:GivenClass a rdfs:Class;
+	rdfs:label "Cours donné durant une session"@fr;
+	rdfs:comment "Représente la notion d'un cours pour une session donnée, permet de faire le lien entre le cours, la session, les étudiants prennant ce cours et le professeur le donnant."@fr.
+
+#########################
+#   Objects Properties  #
+#########################
+
+:takesClass a rdf:Propery;
+	rdfs:label "suis le cours"@fr;
+	rdfs:domain :Student;
+	rdfs:range :GivenClass. 
+	
+:givesClass a rdf:Propery;
+	rdfs:label "donne le cours"@fr;
+	rdfs:domain :Teacher;
+	rdfs:range :GivenClass. 
+
+:class a rdf:Propery;
+	rdfs:label "instance du cours durant une session"@fr;
+	rdfs:comment "fait le lien entre un cours et son instance de :GivenClass durant une session donnée"@fr;
+	rdfs:domain :GivenClass;
+	rdfs:range :Class.
+	
+:session a rdf:Propery;
+	rdfs:label "instance d'une session pour un cours donné"@fr;
+	rdfs:comment "fait le lien entre une session et son instance de :GivenClass pour un cours donné"@fr;
+	rdfs:domain :GivenClass;
+	rdfs:range :Session.
+
+
+#########################
+#    Data Properties    #
+#########################
+
+:numberCredits a rdf:Propery;
+	rdfs:label "nombre de credits"@fr;
+	rdfs:comment "nombre de credits offerts pour un cours"@fr;
+	rdfs:domain :Class;
+	rdfs:range xsd:integer.
+	
+:sigleClass a rdf:Propery;
+	rdfs:label "sigle d'un cours"@fr;
+	rdfs:domain :Class;
+	rdfs:range xsd:string.
+	
+:titleClass a rdf:Propery;
+	rdfs:label "titre d'un cours"@fr;
+	rdfs:domain :Class;
+	rdfs:range xsd:string.
+	
+:name a rdf:Propery;
+	rdfs:label "nom d'une personne"@fr;
+	rdfs:domain :Person;
+	rdfs:range xsd:string.
+	
+:matricule a rdf:Propery;
+	rdfs:label "matricule d'un étudiant"@fr;
+	rdfs:domain :Student;
+	rdfs:range xsd:integer.
+	
+:year a rdf:Propery;
+	rdfs:label "année d'une session"@fr;
+	rdfs:domain :Session;
+	rdfs:range xsd:integer.
+	
+:season a rdf:Propery;
+	rdfs:label "saison d'une session"@fr;
+	rdfs:domain :Session;
+	rdfs:range xsd:string.
+	
+#########################
+#      Instances        #
+#########################
+
+# Teachers
+
+:Marie a :Teacher;
+	:name "Marie"^^xsd:string.
+
+:Etta a :Teacher;
+	:name "Etta"^^xsd:string.
+	
+:Leroy a :Teacher;
+	:name "Leroy "^^xsd:string.
+	
+:Deborah a :Teacher;
+	:name "Deborah"^^xsd:string.
+	
+:Stanley a :Teacher;
+	:name "Stanley"^^xsd:string.
+	
+:Ethel a :Teacher;
+	:name "Ethel"^^xsd:string.
+	
+:Loree a :Teacher;
+	:name "Loree"^^xsd:string.
+	
+:Harold a :Teacher;
+	:name "Harold"^^xsd:string.
+	
+:Kristin a :Teacher;
+	:name "Kristin"^^xsd:string.
+	
+:Tabitha a :Teacher;
+	:name "Tabitha"^^xsd:string.
+
+	
+# Students
+	
+:Joshua a :Student;
+	:name "Joshua"^^xsd:string;
+	:matricule "0000001"^^xsd:integer.
+	
+:Perry a :Student;
+	:matricule "0000002"^^xsd:integer.
+	
+:Leonard a :Student;
+	:name "Leonard"^^xsd:string;
+	:matricule "0000003"^^xsd:integer.
+	
+:Violet a :Student;
+	:name "Violet"^^xsd:string;
+	:matricule "0000004"^^xsd:integer;
+	:matricule "0000005"^^xsd:integer.
+	
+:Jesse a :Student;
+	:name "Jesse"^^xsd:string;
+	:matricule "0000006"^^xsd:integer.
+	
+:Robert a :Student;
+	:name "Robert"^^xsd:string.
+	
+:Rose a :Student;
+	:name "Rose"^^xsd:string;
+	:matricule "0000007"^^xsd:integer.
+	
+:Michael a :Student;
+	:name "Michael"^^xsd:string;
+	:matricule "0000008"^^xsd:integer.
+	
+:Danilo a :Student;
+	:name "Danilo"^^xsd:string;
+	:matricule "0000009"^^xsd:integer.
+	
+:Jack a :Student;
+	:name "Jack"^^xsd:string;
+	:matricule "0000010"^^xsd:integer.
+
+	
+# Cours
+
+:INF8410 a :Class;
+	:sigleClass "INF8410"^^xsd:string;
+	:titleClass "Ontologie et web sémantique"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+:INF8460 a :Class;
+	:sigleClass "INF8460"^^xsd:string;
+	:titleClass "Traitement automatique de la langue naturelle"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+:MTH1110 a :Class;
+	:sigleClass "MTH1110"^^xsd:string;
+	:titleClass "Équations différentielles ordinaires"^^xsd:string;
+	:numberCredits "2"^^xsd:integer.
+	
+:MTH1210 a :Class;
+	:sigleClass "MTH1210"^^xsd:string;
+	:titleClass "Méth. numér. pour équations diff. ordinaires"^^xsd:string;
+	:numberCredits "1"^^xsd:integer.
+	
+:PHS1102 a :Class;
+	:sigleClass "PHS1102"^^xsd:string;
+	:titleClass "Champs électromagnétiques"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+:INF8225 a :Class;
+	:sigleClass "INF8225"^^xsd:string;
+	:titleClass "I.A.:tech. probabilistes et d'apprentissage et web sémantique"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+:LOG2420 a :Class;
+	:sigleClass "LOG242"^^xsd:string;
+	:titleClass "Anal. et conc. des interfaces utilisateurs"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+:INF8405 a :Class;
+	:sigleClass "INF8405"^^xsd:string;
+	:titleClass "Analyse et conception d'algorithmes"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+:INF6405 a :Class;
+	:sigleClass "INF6405"^^xsd:string;
+	:titleClass "Systèmes informatiques mobiles"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+:INF2705 a :Class;
+	:sigleClass "INF2705"^^xsd:string;
+	:titleClass "Infographie"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+
+:INF3005 a :Class;
+	:sigleClass "INF3005"^^xsd:string;
+	:titleClass "Communication écrite et orale"^^xsd:string;
+	:numberCredits "3"^^xsd:integer.
+	
+# Session
+
+:AUT18 a :Session;
+	:year "2018"^^xsd:integer;
+	:season "Automne"^^xsd:string.
+	
+:HIV19 a :Session;
+	:year "2019"^^xsd:integer;
+	:season "Hiver"^^xsd:string.
+	
+:AUT19 a :Session;
+	:year "2019"^^xsd:integer;
+	:season "Automne"^^xsd:string.
+	
+	
+# Given Class 
+
+#    AUT 18
+
+:INF8410AUT18 a :GivenClass;
+	:class :INF8410;
+	:session :AUT18.
+:Marie :givesClass :INF8410AUT18.
+
+:INF8460AUT18 a :GivenClass;
+	:class :INF8460;
+	:session :AUT18.
+:Leroy :givesClass :INF8460AUT18.
+	
+:MTH1110AUT18 a :GivenClass;
+	:class :MTH1110;
+	:session :AUT18.
+:Deborah :givesClass :MTH1110AUT18.
+	
+:MTH1210AUT18 a :GivenClass;
+	:class :MTH1210;
+	:session :AUT18.
+:Stanley :givesClass :MTH1210AUT18.
+	
+:PHS1102AUT18 a :GivenClass;
+	:class :PHS1102;
+	:session :AUT18.
+:Ethel :givesClass :PHS1102AUT18.
+	
+:INF8225AUT18 a :GivenClass;
+	:class :INF8225;
+	:session :AUT18.
+:Loree :givesClass :INF8225AUT18.	
+	
+:LOG2420AUT18 a :GivenClass;
+	:class :LOG2420;
+	:session :AUT18.
+:Harold :givesClass :LOG2420AUT18.
+	
+:INF8405AUT18 a :GivenClass;
+	:class :INF8405;
+	:session :AUT18.
+:Kristin :givesClass :INF8405AUT18.
+
+:INF6405AUT18 a :GivenClass;
+	:class :INF6405;
+	:session :AUT18.
+:Kristin :givesClass :INF6405AUT18.
+	
+:INF2705AUT18 a :GivenClass;
+	:class :INF2705;
+	:session :AUT18.
+:Kristin :givesClass :INF2705AUT18.
+
+:INF3005AUT18 a :GivenClass;
+	:class :INF3005;
+	:session :AUT18.
+:Loree :givesClass :INF3005AUT18.
+
+#    HIV 19    
+	
+:INF8410HIV19 a :GivenClass;
+	:class :INF8410;
+	:session :HIV19.
+:Marie :givesClass :INF8410HIV19.
+
+:INF8460HIV19 a :GivenClass;
+	:class :INF8460;
+	:session :HIV19.
+:Marie :givesClass :INF8460HIV19.
+	
+:MTH1110HIV19 a :GivenClass;
+	:class :MTH1110;
+	:session :HIV19.
+:Marie :givesClass :MTH1110HIV19.
+	
+:MTH1210HIV19 a :GivenClass;
+	:class :MTH1210;
+	:session :HIV19.
+:Kristin :givesClass :MTH1210HIV19.
+	
+:PHS1102HIV19 a :GivenClass;
+	:class :PHS1102;
+	:session :HIV19.
+:Kristin :givesClass :PHS1102HIV19.
+	
+:INF8225HIV19 a :GivenClass;
+	:class :INF8225;
+	:session :HIV19.
+:Kristin :givesClass :INF8225HIV19.
+	
+:LOG2420HIV19 a :GivenClass;
+	:class :LOG2420;
+	:session :HIV19.
+:Harold :givesClass :LOG2420HIV19.
+
+:INF6405HIV19 a :GivenClass;
+	:class :INF6405;
+	:session :HIV19.
+:Loree :givesClass :INF6405HIV19.
+	
+:INF2705HIV19 a :GivenClass;
+	:class :INF2705;
+	:session :HIV19.
+:Loree :givesClass :INF2705HIV19.
+
+:INF3005HIV19 a :GivenClass;
+	:class :INF3005;
+	:session :HIV19.
+:Loree :givesClass :INF3005HIV19.
+	
+#    AUT 19
+	
+:INF8410AUT19 a :GivenClass;
+	:class :INF8410;
+	:session :AUT19.
+:Etta :givesClass :INF8410AUT19.
+
+:INF8460AUT19 a :GivenClass;
+	:class :INF8460;
+	:session :AUT19.
+:Deborah :givesClass :INF8460AUT19.
+	
+:MTH1110AUT19 a :GivenClass;
+	:class :MTH1110;
+	:session :AUT19.
+:Harold :givesClass :MTH1110AUT19.
+	
+:MTH1210AUT19 a :GivenClass;
+	:class :MTH1210;
+	:session :AUT19.
+:Harold :givesClass :MTH1210AUT19.
+	
+:PHS1102AUT19 a :GivenClass;
+	:class :PHS1102;
+	:session :AUT19.
+:Stanley :givesClass :PHS1102AUT19.
+	
+:INF8225AUT19 a :GivenClass;
+	:class :INF8225;
+	:session :AUT19.
+:Stanley :givesClass :INF8225AUT19.
+
+:INF8405AUT19 a :GivenClass;
+	:class :INF8405;
+	:session :AUT19.
+:Stanley :givesClass :INF8405AUT19.
+
+:INF6405AUT19 a :GivenClass;
+	:class :INF6405;
+	:session :AUT19.
+:Loree :givesClass :INF6405AUT19.
+	
+:INF2705AUT19 a :GivenClass;
+	:class :INF2705;
+	:session :AUT19.
+:Loree :givesClass :INF2705AUT19.
+
+:INF3005AUT19 a :GivenClass;
+	:class :INF3005;
+	:session :AUT19.
+:Loree :givesClass :INF3005AUT19.
+	
+
+# Students takes class
+
+:Joshua :takesClass :INF8410AUT18, :INF8460AUT18, :MTH1110AUT18, :MTH1210AUT18, 
+	:PHS1102HIV19, :INF8225HIV19, :LOG2420HIV19,
+	:INF6405AUT19, :INF2705AUT19, :INF3005AUT19.
+	
+:Perry :takesClass :INF8410AUT18, :INF8405AUT18, :INF6405AUT18, 
+	:INF8460HIV19, :MTH1110HIV19, :MTH1210HIV19, :PHS1102HIV19,
+	:INF8410AUT19, :INF8225AUT19, :INF2705AUT19.
+	
+:Leonard :takesClass :INF8410AUT18, :INF8460AUT18, :MTH1110AUT18, :MTH1210AUT18, :INF8405AUT18,
+	:PHS1102HIV19, :INF8225HIV19, :LOG2420HIV19, 
+	:INF8410AUT19, :INF2705AUT19, :INF3005AUT19.
+	
+:Violet :takesClass :INF8410AUT18, :MTH1110AUT18, :MTH1210AUT18, :INF8225AUT18, :INF6405AUT18,
+	:INF8225HIV19, :LOG2420HIV19, :INF6405HIV19, :INF2705HIV19, :INF3005HIV19,
+	:INF8410AUT19, :INF8460AUT19, :MTH1110AUT19, :MTH1210AUT19, :PHS1102AUT19.
+	
+:Jesse :takesClass :INF8410AUT18, :INF8460AUT18, :MTH1110AUT18, :MTH1210AUT18, :PHS1102AUT18, :INF8225AUT18,
+	:INF8460HIV19, :MTH1110HIV19, :MTH1210HIV19, :PHS1102HIV19, :INF8225HIV19, 
+	:INF8405AUT19, :INF6405AUT19, :INF2705AUT19,  :INF3005AUT19.
+	
+:Robert :takesClass :PHS1102AUT18, :INF8225AUT18, :LOG2420AUT18, :INF8405AUT18, :INF6405AUT18, :INF2705AUT18,
+	:INF8410HIV19, :INF3005HIV19,
+	:MTH1110AUT19, :MTH1210AUT19, :PHS1102AUT19, :INF8225AUT19, :INF8405AUT19, :INF6405AUT19.
+	
+:Rose :takesClass :PHS1102AUT18, :INF8225AUT18, :LOG2420AUT18, :INF8405AUT18, :INF6405AUT18, :INF2705AUT18,
+	:INF8410HIV19, :INF8460HIV19, :MTH1110HIV19, :LOG2420HIV19, :INF6405HIV19, :INF2705HIV19,
+	:INF8410AUT19, :INF8460AUT19, :PHS1102AUT19, :INF6405AUT19, :INF2705AUT19.
+	
+:Michael :takesClass :INF8410AUT18, :INF8460AUT18, :MTH1110AUT18, :MTH1210AUT18, :PHS1102AUT18, :INF8225AUT18, :LOG2420AUT18, :INF8405AUT18, 
+	:INF8410HIV19, :INF8460HIV19, :MTH1110HIV19, :MTH1210HIV19, :PHS1102HIV19,
+	:PHS1102AUT19, :INF8225AUT19, :INF8405AUT19, :INF6405AUT19.
+	
+:Danilo :takesClass :LOG2420AUT18, :INF8405AUT18, :INF6405AUT18, :INF2705AUT18, :INF3005AUT18,
+	:INF8410HIV19, :INF8460HIV19, :MTH1110HIV19, :MTH1210HIV19, :PHS1102HIV19, :INF8225HIV19, :LOG2420HIV19, :INF6405HIV19,
+	:MTH1110AUT19, :MTH1210AUT19, :PHS1102AUT19, :INF8225AUT19, :INF8405AUT19.
+	
+:Jack :takesClass :PHS1102AUT18, :INF8225AUT18, :LOG2420AUT18, :INF8405AUT18,
+	:INF8410HIV19, :INF8460HIV19, :MTH1110HIV19, :MTH1210HIV19, :PHS1102HIV19, :INF3005HIV19,
+	:INF8225AUT19, :INF8405AUT19, :INF6405AUT19, :INF2705AUT19.
