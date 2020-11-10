@@ -1,14 +1,38 @@
-# Question 2.3a
 @prefix : <http://www.exemple.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
+# Question 2.3a
 :PersonShape
 	a sh:NodeShape;
 	sh:targetClass :Person;
 	sh:property [
-		sh:path rdfs:label;
+		sh:path :name;
 		sh:datatype xsd:string;
+	].
+
+# Question 2.3b
+:StudentShape
+	a sh:NodeShape;
+	sh:targetClass :Student;
+	sh:property [
+		sh:path :matricule;
+		sh:minCount 1;
+		sh:maxCount 1;
+	].
+
+# Question 2.3c & 2.3d
+:ClassShape
+	a sh:NodeShape;
+	sh:targetClass :Class;
+	sh:property [
+		sh:path :numberCredits;
+		sh:minInclusive 1;
+		sh:maxInclusive 3;
+	];
+	sh:property [
+		sh:path :sigleClass;
+		sh:minLength 7;
 	].
