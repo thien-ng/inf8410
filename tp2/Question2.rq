@@ -1,0 +1,101 @@
+# Question 2.2a
+
+prefix : <http://www.exemple.org/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?teacherName ?semester
+WHERE
+{
+	?person :name ?teacherName.
+  	?person :givesClass ?sessClass.
+  	?person a :Teacher.
+    ?sessClass :class :INF8410.
+  	:Jesse :takesClass ?sessClass.
+    ?sessClass :session ?session.
+   	?session :season ?season.
+  	?session :year ?year.
+  	BIND(concat(str(?season)," ",str(?year)) AS ?semester)
+}
+
+# Question 2.2b
+
+prefix : <http://www.exemple.org/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?name
+WHERE
+{
+	?person :takesClass ?sessClass.
+  	?person :name ?name.
+  	?sessClass :class ?class.
+  	?class :titleClass "Champs électromagnétiques"^^xsd:string.
+  	:Violet :takesClass ?sessClass.
+}
+
+# Question 2.2.c
+prefix : <http://www.exemple.org/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?name (MAX(?numClass) as ?max)
+WHERE
+{
+  	?person a :Teacher.
+    ?person :name ?name.
+  	{
+      SELECT ?person (COUNT(distinct ?sessClass) as ?numClass)
+      WHERE
+      {
+        ?person :givesClass ?sessClass.
+      }
+      GROUP BY ?person
+    }
+}
+GROUP BY ?name
+ORDER BY DESC(?max) LIMIT 1
+
+# Question 2.2d
+# Reponse: non, il n'a pas fait les 11 cours, il a seulement fait 10
+
+prefix : <http://www.exemple.org/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (COUNT(distinct ?class) as ?t)
+WHERE
+{
+  ?person :takesClass ?sessClass.
+  ?person :name "Leonard"^^xsd:string.
+  ?sessClass :class ?class.
+}
+GROUP BY ?person
+
+# Question 2.2e
+prefix : <http://www.exemple.org/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?name (AVG(?sum) as ?avg)
+WHERE
+{
+  	?person :name ?name.
+	{
+        SELECT ?person ?session (SUM(?credits) as ?sum)
+        WHERE
+        {
+            ?person :takesClass ?sessClass.
+            ?sessClass :session ?session.
+            ?sessClass :class ?class.
+            ?class :numberCredits ?credits.
+        }
+        GROUP BY ?person ?session
+  	}
+}
+GROUP BY ?name
