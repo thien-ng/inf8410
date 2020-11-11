@@ -1,9 +1,6 @@
 # Question 2.2a
 
 prefix : <http://www.exemple.org/>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?teacherName ?semester
 WHERE
@@ -22,9 +19,6 @@ WHERE
 # Question 2.2b
 
 prefix : <http://www.exemple.org/>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?name
 WHERE
@@ -38,9 +32,6 @@ WHERE
 
 # Question 2.2.c
 prefix : <http://www.exemple.org/>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?name (MAX(?numClass) as ?max)
 WHERE
@@ -63,11 +54,8 @@ ORDER BY DESC(?max) LIMIT 1
 # Reponse: non, il n'a pas fait les 11 cours, il a seulement fait 10
 
 prefix : <http://www.exemple.org/>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT (COUNT(distinct ?class) as ?t)
+SELECT (COUNT(distinct ?class) as ?count)
 WHERE
 {
   ?person :takesClass ?sessClass.
@@ -78,9 +66,6 @@ GROUP BY ?person
 
 # Question 2.2e
 prefix : <http://www.exemple.org/>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?name (AVG(?sum) as ?avg)
 WHERE

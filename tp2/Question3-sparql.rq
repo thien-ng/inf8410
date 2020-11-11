@@ -1,0 +1,77 @@
+# SPARQL
+# 1. What is the average price of games per company (AVG)
+
+prefix gm: <http://www.exemple.org/video-game-ontology/>
+prefix schema: <https://schema.org/docs/schema.html>
+
+SELECT ?companyName (AVG(?price) as ?average)
+WHERE
+{
+	?company gm:hasDeveloped ?game.
+  	?company schema:name ?companyName.
+  	?game gm:gamePrice ?price.
+}
+GROUP BY ?companyName
+ORDER BY DESC(?average)
+
+# 2. Who worked on Among Us and what was their roles
+
+prefix gm: <http://www.exemple.org/video-game-ontology/>
+prefix schema: <https://schema.org/docs/schema.html>
+
+SELECT ?name ?role
+WHERE
+{
+	?game gm:createdBy ?creator.
+  	?game schema:name "Among Us"^^xsd:string.
+    ?creator schema:name ?name.
+    ?creator gm:role ?role.
+}
+
+# 3. What games were published between 2015-01-01 (inclusive) and 2019-01-01 (inclusive) per company
+
+prefix schema: <https://schema.org/docs/schema.html>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?gameName ?date
+WHERE
+{
+	?game schema:datePublished ?date.
+  	?game schema:name ?gameName
+  	FILTER(?date >= "2015-01-01"^^xsd:date && ?date <= "2019-01-01"^^xsd:date)
+}
+ORDER BY ?date
+
+# 4. What is the average gamePrice/gameSize ratio of each games per company
+
+prefix gm: <http://www.exemple.org/video-game-ontology/>
+prefix schema: <https://schema.org/docs/schema.html>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+SELECT ?companyName (AVG(xsd:float(?price)/xsd:float(?size)) as ?avg)
+WHERE 
+{
+	
+  	?company gm:hasDeveloped ?game.
+  	?company schema:name ?companyName.
+    ?game gm:gamePrice ?price.
+    ?game gm:gameSize ?size.
+
+}
+GROUP BY ?companyName
+
+# 5. Which game has the largest size after 2018-01-01 (MAX)
+
+prefix gm: <http://www.exemple.org/video-game-ontology/>
+prefix schema: <https://schema.org/docs/schema.html>
+
+SELECT ?name (MAX(?size) as ?max)
+WHERE 
+{
+  	?company gm:hasDeveloped ?game.
+  	?game schema:name ?name.
+    ?game gm:gameSize ?size.
+}
+GROUP BY ?name
+ORDER BY DESC(?max) LIMIT 1

@@ -51,6 +51,7 @@
 
 # Valve
 :HalfLife a schema:VideoGame;
+        schema:name "Half Life"^^xsd:string;
         schema:datePublished "2001-05-10"^^xsd:date;
         gm:playedWith :Gamepad;
         gm:gamePrice "30"^^xsd:integer;
@@ -58,6 +59,7 @@
         gm:gameSize "15"^^xsd:integer.
         
 :LeftForDead a schema:VideoGame;
+        schema:name "Left For Dead"^^xsd:string;
         schema:datePublished "2016-02-02"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard, :Mouse;
         gm:gamePrice "29"^^xsd:integer;
@@ -65,16 +67,17 @@
         gm:gameSize "6"^^xsd:integer.
         
 :AmongUs a schema:VideoGame;
+        schema:name "Among Us"^^xsd:string;
         schema:datePublished "2020-02-02"^^xsd:date;
         gm:playedWith :Gamepad;
         gm:gamePrice "0"^^xsd:integer;
-
         gm:format :DigitalFormat;
         gm:createdBy :Konstantinos, :Gordon, :KimJongUn;
         gm:gameSize "3"^^xsd:integer.
 
 # Ubisoft
 :WatchDogs a schema:VideoGame;
+        schema:name "Watch Dogs"^^xsd:string;
         schema:datePublished "2015-01-10"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard, :Mouse;
         gm:gamePrice "60"^^xsd:integer;
@@ -82,6 +85,7 @@
         gm:gameSize "9"^^xsd:integer.
 
 :RainbowSix a schema:VideoGame;
+        schema:name "Rainbow Six"^^xsd:string;
         schema:datePublished "2001-07-19"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard, :Mouse;
         gm:gamePrice "25"^^xsd:integer;
@@ -89,6 +93,7 @@
         gm:gameSize "11"^^xsd:integer.
 
 :Division a schema:VideoGame;
+        schema:name "Division"^^xsd:string;
         schema:datePublished "2011-05-11"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard;
         gm:gamePrice "45"^^xsd:integer;
@@ -97,6 +102,7 @@
 
 # Blizzard
 :Overwatch a schema:VideoGame;
+        schema:name "Overwatch"^^xsd:string;
         schema:datePublished "2016-08-10"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard;
         gm:gamePrice "60"^^xsd:integer;
@@ -104,6 +110,7 @@
         gm:gameSize "5"^^xsd:integer.
 
 :WorldOfWarcraft a schema:VideoGame;
+        schema:name "World of Warcraft"^^xsd:string;
         schema:datePublished "2004-12-10"^^xsd:date;
         gm:playedWith :Keyboard, :Mouse;
         gm:gamePrice "10"^^xsd:integer;
@@ -111,6 +118,7 @@
         gm:gameSize "11"^^xsd:integer.
 
 :Diablo a schema:VideoGame;
+        schema:name "Diablo"^^xsd:string;
         schema:datePublished "2020-04-13"^^xsd:date;
         gm:playedWith  :Gamepad, :Keyboard, :Mouse;
         gm:gamePrice "70"^^xsd:integer;
@@ -119,6 +127,7 @@
 
 # EA
 :TheSims4 a schema:VideoGame;
+        schema:name "The Sims 4"^^xsd:string;
         schema:datePublished "2014-09-02"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard, :Mouse;
         gm:gamePrice "10"^^xsd:integer;
@@ -126,6 +135,7 @@
         gm:gameSize "11"^^xsd:integer.
 
 :MaddenNFL20 a schema:VideoGame;
+        schema:name "Madden NFL 20"^^xsd:string;
         schema:datePublished "2019-06-14"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard;
         gm:gamePrice "30"^^xsd:integer;
@@ -133,6 +143,7 @@
         gm:gameSize "8"^^xsd:integer.
 
 :Unravel a schema:VideoGame;
+        schema:name "Unravel"^^xsd:string;
         schema:datePublished "2016-02-09"^^xsd:date;
         gm:playedWith :Gamepad, :Keyboard;
         gm:gamePrice "20"^^xsd:integer;
@@ -141,6 +152,7 @@
 
 # Nintendo
 :ZeldaBreathOfTheWild a schema:VideoGame;
+        schema:name "Zelda Breath Of The Wild"^^xsd:string;
         schema:datePublished "2017-03-03"^^xsd:date;
         gm:playedWith :Gamepad;
         gm:gamePrice "80"^^xsd:integer;
@@ -148,6 +160,7 @@
         gm:gameSize "10"^^xsd:integer.
         
 :PokemonGoldSilver a schema:VideoGame;
+        schema:name "Pokemon Gold Silver"^^xsd:string;
         schema:datePublished "1999-11-21"^^xsd:date;
         gm:playedWith :Gamepad;
         gm:gamePrice "15"^^xsd:integer;
@@ -155,6 +168,7 @@
         gm:gameSize "2"^^xsd:integer.
 
 :MarioKart8 a schema:VideoGame;
+        schema:name "Mario Kart 8"^^xsd:string;
         schema:datePublished "2014-05-29"^^xsd:date;
         gm:playedWith :Gamepad;
         gm:gamePrice "48"^^xsd:integer;
@@ -184,10 +198,3 @@
 :Valve a gm:GameCompany;
     schema:name "Valve Corporation"^^xsd:string;
     gm:hasDeveloped :HalfLife, :LeftForDead, :AmongUs.
-
-# SPARQL
-# 1. What is the average price of games per company (AVG)
-# 2. How many employees work on "Among Us" (COUNT)
-# 3. What games were published between 2015-01-01 and 2019-01-01 per company
-# 4. What is the name of the company that published the game "Among Us" which was developed by Gordon Ramsay, a game developer.
-# 5. Which game has the largest size after 2018-01-01 (MAX)
