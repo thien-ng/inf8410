@@ -1,27 +1,10 @@
-@prefix : <example.org/ontologies/instance> .
-@prefix gm: <example.org/ontologies/games> .
+@prefix : <http://www.exemple.org/video-game-ontology/instances> .
+@prefix gm: <http://www.exemple.org/video-game-ontology/> .
 @prefix schema: <https://schema.org/docs/schema.html> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-#####################
-# COMPANIES
-#####################
-:Ubisoft a gm:GameCompany;
-    schema:name "Ubisoft"^^xsd:string.
-    
-:EA a gm:GameCompany;
-    schema:name "Electronic Arts"^^xsd:string.
-
-:Nintendo a gm:GameCompany;
-    schema:name "Nintendo"^^xsd:string.
-
-:Blizzard a gm:GameCompany;
-    schema:name "Activision Blizzard"^^xsd:string.
-
-:Valve a gm:GameCompany;
-    schema:name "Valve Corporation"^^xsd:string.
 
 #####################
 # EMPLOYEES
@@ -47,6 +30,20 @@
 
 :DigitalFormat a gm:Media;
         schema:name "Digital"^^xsd:string.
+
+
+#####################
+# CONTROLLERS
+#####################
+:Gamepad a gm:Controller;
+        schema:name "Gamepad"^^xsd:string.
+
+:Mouse a gm:Controller;
+        schema:name "Mouse"^^xsd:string.
+        
+:Keyboard a gm:Controller;
+        schema:name "Keyboard"^^xsd:string.
+
 
 #####################
 # GAMES
@@ -166,28 +163,31 @@
 
 
 #####################
-# CONTROLLERS
+# COMPANIES
 #####################
-:Gamepad a gm:Controller;
-        schema:name "Gamepad"^^xsd:string.
+:Ubisoft a gm:GameCompany;
+    schema:name "Ubisoft"^^xsd:string;
+    gm:hasDeveloped :WatchDogs, :RainbowSix, :Division.
 
-:Mouse a gm:Controller;
-        schema:name "Mouse"^^xsd:string.
-        
-:Keyboard a gm:Controller;
-        schema:name "Keyboard"^^xsd:string.
+:EA a gm:GameCompany;
+    schema:name "Electronic Arts"^^xsd:string;
+    gm:hasDeveloped :TheSims4, :MaddenNFL20, :Unravel.
 
-        
+:Nintendo a gm:GameCompany;
+    schema:name "Nintendo"^^xsd:string;
+    gm:hasDeveloped :ZeldaBreathOfTheWild, :PokemonGoldSilver, :MarioKart8.
+
+:Blizzard a gm:GameCompany;
+    schema:name "Activision Blizzard"^^xsd:string;
+    gm:hasDeveloped :Overwatch, :WorldOfWarcraft, :Diablo.
+
+:Valve a gm:GameCompany;
+    schema:name "Valve Corporation"^^xsd:string;
+    gm:hasDeveloped :HalfLife, :LeftForDead, :AmongUs.
+
 # SPARQL
 # 1. What is the average price of games per company (AVG)
 # 2. How many employees work on "Among Us" (COUNT)
 # 3. What games were published between 2015-01-01 and 2019-01-01 per company
 # 4. What is the name of the company that published the game "Among Us" which was developed by Gordon Ramsay, a game developer.
 # 5. Which game has the largest size after 2018-01-01 (MAX)
-
-# SHACL
-# 1. A company should have a name with the format xsd:string
-# 2. A game should only have one published date
-# 3. A game has a minimum of 1 GB
-# 4. A game can be played with a controller in this list: mouse, keyboard, gamepad
-# 5. A company should have at least one game that is distributed in digital format

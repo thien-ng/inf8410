@@ -1,0 +1,49 @@
+@prefix : <http://www.exemple.org/video-game-ontology/instances> .
+@prefix gm: <http://www.exemple.org/video-game-ontology/> .
+@prefix schema: <https://schema.org/docs/schema.html> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# SHACL
+# 1. A company should have a name with the format xsd:string with a min length of 2 characters
+# 2. A game should only have one published date with type xsd:date
+# 3. A game has a minimum of 1 GB and type integer and max 250 GB
+# 4. A game can be played with a controller in this list: mouse, keyboard, gamepad
+# 5. A company should have at least one game that is distributed in digital format
+
+:GameCompanyShape
+	a sh:NodeShape;
+	sh:targetClass gm:GameCompany;
+	sh:property [
+		sh:path schema:name;
+                sh:minLength 2;
+		sh:datatype xsd:string;
+	];
+        sh:property [
+		sh:path (gm:hasDeveloped gm:format);
+		sh:hasValue :DigitalFormat;
+                sh:minCount 1;
+	].
+
+
+:VideoGameShape
+	a sh:NodeShape;
+	sh:targetClass schema:VideoGame;
+	sh:property [
+		sh:path schema:datePublished;
+                sh:minCount 1;
+		sh:maxCount 1;
+                sh:datatype xsd:date;
+	];
+	sh:property [
+		sh:path gm:gameSize;
+                sh:minInclusive 1;
+                sh:maxInclusive 250;
+                sh:datatype xsd:integer;
+	];
+        sh:property [
+		sh:path gm:playedWith;
+                sh:in (:Mouse :Keyboard :Gamepad);
+	].
