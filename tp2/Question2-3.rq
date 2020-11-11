@@ -23,7 +23,8 @@
 		sh:maxCount 1;
 	];
 	sh:property [
-		sh:path (:takesClass :INF3005)
+		sh:path (:takesClass :class);
+		sh:hasValue :INF3005;
 		sh:minCount 1;
 	].
 
