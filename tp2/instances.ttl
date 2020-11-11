@@ -1,0 +1,193 @@
+@prefix : <example.org/ontologies/instance> .
+@prefix gm: <example.org/ontologies/games> .
+@prefix schema: <https://schema.org/docs/schema.html> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#####################
+# COMPANIES
+#####################
+:Ubisoft a gm:GameCompany;
+    schema:name "Ubisoft"^^xsd:string.
+    
+:EA a gm:GameCompany;
+    schema:name "Electronic Arts"^^xsd:string.
+
+:Nintendo a gm:GameCompany;
+    schema:name "Nintendo"^^xsd:string.
+
+:Blizzard a gm:GameCompany;
+    schema:name "Activision Blizzard"^^xsd:string.
+
+:Valve a gm:GameCompany;
+    schema:name "Valve Corporation"^^xsd:string.
+
+#####################
+# EMPLOYEES
+#####################
+:Konstantinos a gm:Creator;
+    schema:name "Konstantinos Lambrou-Latreille"^^xsd:string;
+    gm:role "Game Developer"^^xsd:string.
+
+:Gordon a gm:Creator;
+    schema:name "Gordon Ramsay"^^xsd:string;
+    gm:role "Game Developer"^^xsd:string.
+
+:KimJongUn a gm:Creator;
+    schema:name "Kim-Jong Un"^^xsd:string;
+    gm:role "Game Designer"^^xsd:string.
+
+
+#####################
+# FORMAT
+#####################
+:PhysicalFormat a gm:Media; 
+        schema:name "Physical"^^xsd:string.
+
+:DigitalFormat a gm:Media;
+        schema:name "Digital"^^xsd:string.
+
+#####################
+# GAMES
+#####################
+
+# Valve
+:HalfLife a schema:VideoGame;
+        schema:datePublished "2001-05-10"^^xsd:date;
+        gm:playedWith :Gamepad;
+        gm:gamePrice "30"^^xsd:integer;
+        gm:format :PhysicalFormat;
+        gm:gameSize "15"^^xsd:integer.
+        
+:LeftForDead a schema:VideoGame;
+        schema:datePublished "2016-02-02"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard, :Mouse;
+        gm:gamePrice "29"^^xsd:integer;
+        gm:format :PhysicalFormat;
+        gm:gameSize "6"^^xsd:integer.
+        
+:AmongUs a schema:VideoGame;
+        schema:datePublished "2020-02-02"^^xsd:date;
+        gm:playedWith :Gamepad;
+        gm:gamePrice "0"^^xsd:integer;
+
+        gm:format :DigitalFormat;
+        gm:createdBy :Konstantinos, :Gordon, :KimJongUn;
+        gm:gameSize "3"^^xsd:integer.
+
+# Ubisoft
+:WatchDogs a schema:VideoGame;
+        schema:datePublished "2015-01-10"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard, :Mouse;
+        gm:gamePrice "60"^^xsd:integer;
+        gm:format :PhysicalFormat;
+        gm:gameSize "9"^^xsd:integer.
+
+:RainbowSix a schema:VideoGame;
+        schema:datePublished "2001-07-19"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard, :Mouse;
+        gm:gamePrice "25"^^xsd:integer;
+        gm:format :PhysicalFormat;
+        gm:gameSize "11"^^xsd:integer.
+
+:Division a schema:VideoGame;
+        schema:datePublished "2011-05-11"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard;
+        gm:gamePrice "45"^^xsd:integer;
+        gm:format :DigitalFormat;
+        gm:gameSize "8"^^xsd:integer.
+
+# Blizzard
+:Overwatch a schema:VideoGame;
+        schema:datePublished "2016-08-10"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard;
+        gm:gamePrice "60"^^xsd:integer;
+        gm:format :PhysicalFormat;
+        gm:gameSize "5"^^xsd:integer.
+
+:WorldOfWarcraft a schema:VideoGame;
+        schema:datePublished "2004-12-10"^^xsd:date;
+        gm:playedWith :Keyboard, :Mouse;
+        gm:gamePrice "10"^^xsd:integer;
+        gm:format :PhysicalFormat;
+        gm:gameSize "11"^^xsd:integer.
+
+:Diablo a schema:VideoGame;
+        schema:datePublished "2020-04-13"^^xsd:date;
+        gm:playedWith  :Gamepad, :Keyboard, :Mouse;
+        gm:gamePrice "70"^^xsd:integer;
+        gm:format :DigitalFormat;
+        gm:gameSize "15"^^xsd:integer.
+
+# EA
+:TheSims4 a schema:VideoGame;
+        schema:datePublished "2014-09-02"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard, :Mouse;
+        gm:gamePrice "10"^^xsd:integer;
+        gm:format :DigitalFormat;
+        gm:gameSize "11"^^xsd:integer.
+
+:MaddenNFL20 a schema:VideoGame;
+        schema:datePublished "2019-06-14"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard;
+        gm:gamePrice "30"^^xsd:integer;
+        gm:format :DigitalFormat;
+        gm:gameSize "8"^^xsd:integer.
+
+:Unravel a schema:VideoGame;
+        schema:datePublished "2016-02-09"^^xsd:date;
+        gm:playedWith :Gamepad, :Keyboard;
+        gm:gamePrice "20"^^xsd:integer;
+        gm:format :DigitalFormat;
+        gm:gameSize "6"^^xsd:integer.
+
+# Nintendo
+:ZeldaBreathOfTheWild a schema:VideoGame;
+        schema:datePublished "2017-03-03"^^xsd:date;
+        gm:playedWith :Gamepad;
+        gm:gamePrice "80"^^xsd:integer;
+        gm:format :DigitalFormat;
+        gm:gameSize "10"^^xsd:integer.
+        
+:PokemonGoldSilver a schema:VideoGame;
+        schema:datePublished "1999-11-21"^^xsd:date;
+        gm:playedWith :Gamepad;
+        gm:gamePrice "15"^^xsd:integer;
+        gm:format :DigitalFormat;
+        gm:gameSize "2"^^xsd:integer.
+
+:MarioKart8 a schema:VideoGame;
+        schema:datePublished "2014-05-29"^^xsd:date;
+        gm:playedWith :Gamepad;
+        gm:gamePrice "48"^^xsd:integer;
+        gm:format :PhysicalFormat;
+        gm:gameSize "7"^^xsd:integer.
+
+
+#####################
+# CONTROLLERS
+#####################
+:Gamepad a gm:Controller;
+        schema:name "Gamepad"^^xsd:string.
+
+:Mouse a gm:Controller;
+        schema:name "Mouse"^^xsd:string.
+        
+:Keyboard a gm:Controller;
+        schema:name "Keyboard"^^xsd:string.
+
+        
+# SPARQL
+# 1. What is the average price of games per company (AVG)
+# 2. How many employees work on "Among Us" (COUNT)
+# 3. What games were published between 2015-01-01 and 2019-01-01 per company
+# 4. What is the name of the company that published the game "Among Us" which was developed by Gordon Ramsay, a game developer.
+# 5. Which game has the largest size after 2018-01-01 (MAX)
+
+# SHACL
+# 1. A company should have a name with the format xsd:string
+# 2. A game should only have one published date
+# 3. A game has a minimum of 1 GB
+# 4. A game can be played with a controller in this list: mouse, keyboard, gamepad
+# 5. A company should have at least one game that is distributed in digital format
