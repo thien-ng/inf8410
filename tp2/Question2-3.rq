@@ -13,7 +13,7 @@
 		sh:datatype xsd:string;
 	].
 
-# Question 2.3b
+# Question 2.3b, 2.3e
 :StudentShape
 	a sh:NodeShape;
 	sh:targetClass :Student;
@@ -21,6 +21,10 @@
 		sh:path :matricule;
 		sh:minCount 1;
 		sh:maxCount 1;
+	];
+	sh:property [
+		sh:path (:takesClass :INF3005)
+		sh:minCount 1;
 	].
 
 # Question 2.3c & 2.3d
@@ -35,4 +39,5 @@
 	sh:property [
 		sh:path :sigleClass;
 		sh:minLength 7;
+		sh:maxLength 7;
 	].
