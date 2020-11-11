@@ -42,3 +42,44 @@
 		sh:minLength 7;
 		sh:maxLength 7;
 	].
+
+
+# test de bonus questions
+# :StudentShape
+# 	a sh:NodeShape;
+# 	sh:targetClass :Student;
+# 	sh:property [
+# 		sh:path :matricule;
+# 		sh:minCount 1;
+# 		sh:maxCount 1;
+# 	];
+# 	sh:property [
+# 		sh:path (:takesClass :class);
+# 		sh:hasValue :INF3005;
+# 		sh:minCount 1;
+# 	];
+# 	sh:sparql [
+# 		a sh:SPARQLConstraint ;   # This triple is optional
+# 		sh:message "Values are literals with German language tag." ;
+# 		sh:prefixes : ;
+# 		sh:select """
+# 			SELECT distinct $this
+# 			WHERE
+# 			{
+# 				$this :takesClass ?sessClass.
+# 				MINUS
+# 				{
+# 				  SELECT $this (SUM(?credits) as ?sum)
+# 				  WHERE
+# 				  {
+# 					$this :takesClass ?sessClass.
+# 					?sessClass :session ?session.
+# 					?sessClass :class ?class.
+# 					?class :numberCredits ?credits.
+# 				  }
+# 				  GROUP BY ?person ?session
+# 				  HAVING (?sum < 9 || ?sum > 18)
+# 				}
+# 			}
+# 			""" ;
+# 	] .
