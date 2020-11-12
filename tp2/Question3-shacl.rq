@@ -18,13 +18,13 @@
 	sh:targetClass gm:GameCompany;
 	sh:property [
 		sh:path schema:name;
-                sh:minLength 2;
+        sh:minLength 2;
 		sh:datatype xsd:string;
 	];
-        sh:property [
+    sh:property [
 		sh:path (gm:hasDeveloped gm:format);
 		sh:hasValue :DigitalFormat;
-                sh:minCount 1;
+    	sh:minCount 1;
 	].
 
 
@@ -33,17 +33,17 @@
 	sh:targetClass schema:VideoGame;
 	sh:property [
 		sh:path schema:datePublished;
-                sh:minCount 1;
+        sh:minCount 1;
 		sh:maxCount 1;
-                sh:datatype xsd:date;
+        sh:datatype xsd:date;
 	];
 	sh:property [
 		sh:path gm:gameSize;
-                sh:minInclusive 1;
-                sh:maxInclusive 250;
-                sh:datatype xsd:integer;
+		sh:minInclusive 1;
+		sh:maxInclusive 250;
+		sh:datatype xsd:integer;
 	];
-        sh:property [
+    sh:property [
 		sh:path gm:playedWith;
-                sh:in (:Mouse :Keyboard :Gamepad);
+        sh:in (:Mouse :Keyboard :Gamepad);
 	].
