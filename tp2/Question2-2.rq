@@ -67,10 +67,14 @@ GROUP BY ?person
 # Question 2.2e
 prefix : <http://www.exemple.org/>
 
-SELECT ?name (AVG(?sum) as ?avg)
+SELECT ?semester (AVG(?sum) as ?avg)
 WHERE
 {
-  	?person :name ?name.
+  	?sessClass :session ?session.
+    ?session :season ?season.
+  	?session :year ?year.
+  	BIND(concat(str(?season)," ",str(?year)) AS ?semester)
+    
 	{
         SELECT ?person ?session (SUM(?credits) as ?sum)
         WHERE
@@ -83,4 +87,4 @@ WHERE
         GROUP BY ?person ?session
   	}
 }
-GROUP BY ?name
+GROUP BY ?semester
