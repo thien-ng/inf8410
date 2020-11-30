@@ -12,9 +12,18 @@
 #    Object Properties
 #################################################################
 
+###  http://www.co-ode.org/ontologies/ont.owl#hasAssetType
+<http://www.co-ode.org/ontologies/ont.owl#hasAssetType> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdf:type owl:FunctionalProperty ;
+                                                        rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ;
+                                                        rdfs:range <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic
 <http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic> rdf:type owl:ObjectProperty ;
                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                             owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#isCharacteristicOf> ;
                                                              rdf:type owl:TransitiveProperty .
 
 
@@ -76,15 +85,33 @@
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Armor
 <http://www.co-ode.org/ontologies/ont.owl#Armor> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ;
-                                                 owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Pet> ,
-                                                                  <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> ,
-                                                                  <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#AssetType
+<http://www.co-ode.org/ontologies/ont.owl#AssetType> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ rdf:type owl:Class ;
+                                                                           owl:unionOf ( <http://www.co-ode.org/ontologies/ont.owl#Defense>
+                                                                                         <http://www.co-ode.org/ontologies/ont.owl#Offense>
+                                                                                         <http://www.co-ode.org/ontologies/ont.owl#Utility>
+                                                                                       )
+                                                                         ] ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ValuePartition> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bear
+<http://www.co-ode.org/ontologies/ont.owl#Bear> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#BlazeWizard
 <http://www.co-ode.org/ontologies/ont.owl#BlazeWizard> rdf:type owl:Class ;
                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Bow
+<http://www.co-ode.org/ontologies/ont.owl#Bow> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#BowmanCharacter
@@ -102,6 +129,16 @@
                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Cape
+<http://www.co-ode.org/ontologies/ont.owl#Cape> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Cat
+<http://www.co-ode.org/ontologies/ont.owl#Cat> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Character
 <http://www.co-ode.org/ontologies/ont.owl#Character> rdf:type owl:Class ;
                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ,
@@ -110,14 +147,14 @@
                                                                        owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Race>
                                                                      ] ;
                                                      owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
-                                                                      <http://www.co-ode.org/ontologies/ont.owl#Class> ,
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#Origin> ,
                                                                       <http://www.co-ode.org/ontologies/ont.owl#Race> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#CharacterAsset
 <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> rdf:type owl:Class ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
-                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Class> ,
+                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Origin> ,
                                                                            <http://www.co-ode.org/ontologies/ont.owl#Race> .
 
 
@@ -126,10 +163,24 @@
                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#Class
-<http://www.co-ode.org/ontologies/ont.owl#Class> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
-                                                 owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Race> .
+###  http://www.co-ode.org/ontologies/ont.owl#Claw
+<http://www.co-ode.org/ontologies/ont.owl#Claw> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Crossbow
+<http://www.co-ode.org/ontologies/ont.owl#Crossbow> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#CygnusKnight
+<http://www.co-ode.org/ontologies/ont.owl#CygnusKnight> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Origin> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Defense
+<http://www.co-ode.org/ontologies/ont.owl#Defense> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Demon
@@ -149,7 +200,18 @@
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#DomainConcept
-<http://www.co-ode.org/ontologies/ont.owl#DomainConcept> rdf:type owl:Class .
+<http://www.co-ode.org/ontologies/ont.owl#DomainConcept> rdf:type owl:Class ;
+                                                         owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#ValuePartition> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Dragon
+<http://www.co-ode.org/ontologies/ont.owl#Dragon> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Dress
+<http://www.co-ode.org/ontologies/ont.owl#Dress> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Elf
@@ -162,9 +224,31 @@
                                                                 <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Equipment
+<http://www.co-ode.org/ontologies/ont.owl#Equipment> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasAssetType> ;
+                                                                       owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Defense>
+                                                                     ] ;
+                                                     owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Pet> ,
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> ,
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Evan
 <http://www.co-ode.org/ontologies/ont.owl#Evan> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Hawk
+<http://www.co-ode.org/ontologies/ont.owl#Hawk> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Heroes
+<http://www.co-ode.org/ontologies/ont.owl#Heroes> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Origin> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#HighFiora
@@ -194,9 +278,19 @@
                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Jewel
+<http://www.co-ode.org/ontologies/ont.owl#Jewel> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Kaiser
 <http://www.co-ode.org/ontologies/ont.owl#Kaiser> rdf:type owl:Class ;
                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Leopard
+<http://www.co-ode.org/ontologies/ont.owl#Leopard> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#MagicianCharacter
@@ -206,6 +300,16 @@
                                                                               <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
                                                                               <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
                                                                               <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Mask
+<http://www.co-ode.org/ontologies/ont.owl#Mask> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Mech
+<http://www.co-ode.org/ontologies/ont.owl#Mech> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mechanics
@@ -238,16 +342,55 @@
                                                                  <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Nove
+<http://www.co-ode.org/ontologies/ont.owl#Nove> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Origin> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Offense
+<http://www.co-ode.org/ontologies/ont.owl#Offense> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Origin
+<http://www.co-ode.org/ontologies/ont.owl#Origin> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
+                                                  owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Race> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Other
+<http://www.co-ode.org/ontologies/ont.owl#Other> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Origin> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Panther
+<http://www.co-ode.org/ontologies/ont.owl#Panther> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Pegasus
+<http://www.co-ode.org/ontologies/ont.owl#Pegasus> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#Pet
 <http://www.co-ode.org/ontologies/ont.owl#Pet> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ;
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasAssetType> ;
+                                                                 owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Utility>
+                                                               ] ;
                                                owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> ,
                                                                 <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait
 <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ;
+                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasAssetType> ;
+                                                                           owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Utility>
+                                                                         ] ;
                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
 
 
@@ -263,6 +406,26 @@
                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> .
 
 
+###  http://www.co-ode.org/ontologies/ont.owl#Resistance
+<http://www.co-ode.org/ontologies/ont.owl#Resistance> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Origin> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Staff
+<http://www.co-ode.org/ontologies/ont.owl#Staff> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Suit
+<http://www.co-ode.org/ontologies/ont.owl#Suit> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Sword
+<http://www.co-ode.org/ontologies/ont.owl#Sword> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+
+
 ###  http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter
 <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> rdf:type owl:Class ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
@@ -273,6 +436,20 @@
 <http://www.co-ode.org/ontologies/ont.owl#Transcendent> rdf:type owl:Class ;
                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Race> ;
                                                         owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Unicorn
+<http://www.co-ode.org/ontologies/ont.owl#Unicorn> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Utility
+<http://www.co-ode.org/ontologies/ont.owl#Utility> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ValuePartition
+<http://www.co-ode.org/ontologies/ont.owl#ValuePartition> rdf:type owl:Class .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#VerdantFiora
@@ -287,12 +464,31 @@
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Weapon
 <http://www.co-ode.org/ontologies/ont.owl#Weapon> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> .
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasAssetType> ;
+                                                                    owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Offense>
+                                                                  ] .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#WildHunters
 <http://www.co-ode.org/ontologies/ont.owl#WildHunters> rdf:type owl:Class ;
                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Wings
+<http://www.co-ode.org/ontologies/ont.owl#Wings> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#WizardRobe
+<http://www.co-ode.org/ontologies/ont.owl#WizardRobe> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Wolf
+<http://www.co-ode.org/ontologies/ont.owl#Wolf> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Zero
@@ -321,6 +517,61 @@
                 <http://www.co-ode.org/ontologies/ont.owl#NightWalker>
                 <http://www.co-ode.org/ontologies/ont.owl#WildHunters>
                 <http://www.co-ode.org/ontologies/ont.owl#Zero>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Armor>
+                <http://www.co-ode.org/ontologies/ont.owl#Cape>
+                <http://www.co-ode.org/ontologies/ont.owl#Dress>
+                <http://www.co-ode.org/ontologies/ont.owl#Jewel>
+                <http://www.co-ode.org/ontologies/ont.owl#Mask>
+                <http://www.co-ode.org/ontologies/ont.owl#Mech>
+                <http://www.co-ode.org/ontologies/ont.owl#Suit>
+                <http://www.co-ode.org/ontologies/ont.owl#WizardRobe>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Bear>
+                <http://www.co-ode.org/ontologies/ont.owl#Cat>
+                <http://www.co-ode.org/ontologies/ont.owl#Dragon>
+                <http://www.co-ode.org/ontologies/ont.owl#Hawk>
+                <http://www.co-ode.org/ontologies/ont.owl#Leopard>
+                <http://www.co-ode.org/ontologies/ont.owl#Panther>
+                <http://www.co-ode.org/ontologies/ont.owl#Pegasus>
+                <http://www.co-ode.org/ontologies/ont.owl#Unicorn>
+                <http://www.co-ode.org/ontologies/ont.owl#Wolf>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Bow>
+                <http://www.co-ode.org/ontologies/ont.owl#Claw>
+                <http://www.co-ode.org/ontologies/ont.owl#Crossbow>
+                <http://www.co-ode.org/ontologies/ont.owl#Staff>
+                <http://www.co-ode.org/ontologies/ont.owl#Sword>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#CygnusKnight>
+                <http://www.co-ode.org/ontologies/ont.owl#Heroes>
+                <http://www.co-ode.org/ontologies/ont.owl#Nove>
+                <http://www.co-ode.org/ontologies/ont.owl#Other>
+                <http://www.co-ode.org/ontologies/ont.owl#Resistance>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Defense>
+                <http://www.co-ode.org/ontologies/ont.owl#Offense>
+                <http://www.co-ode.org/ontologies/ont.owl#Utility>
               )
 ] .
 
