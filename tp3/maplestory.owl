@@ -67,7 +67,8 @@
 
 ###  http://www.co-ode.org/ontologies/ont.owl#isCharacteristicOf
 <http://www.co-ode.org/ontologies/ont.owl#isCharacteristicOf> rdf:type owl:ObjectProperty ;
-                                                              rdfs:subPropertyOf owl:topObjectProperty .
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdf:type owl:TransitiveProperty .
 
 
 #################################################################
