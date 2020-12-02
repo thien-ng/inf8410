@@ -70,14 +70,6 @@
                                                               rdfs:subPropertyOf owl:topObjectProperty .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#knows
-<http://www.co-ode.org/ontologies/ont.owl#knows> rdf:type owl:ObjectProperty ;
-                                                 rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic> ;
-                                                 rdf:type owl:ReflexiveProperty ;
-                                                 rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                 rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Character> .
-
-
 #################################################################
 #    Data properties
 #################################################################
@@ -249,7 +241,6 @@
                                                                                ] ;
                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
                                                            owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#MagicianCharacter> ,
-                                                                            <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> ,
                                                                             <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
                                                                             <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
                                                                             <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
@@ -533,7 +524,7 @@
                                                       rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Cape> ,
                                                                       [ rdf:type owl:Restriction ;
                                                                         owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> ;
-                                                                        owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#IlliumCape>
+                                                                        owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Illium>
                                                                       ] .
 
 
@@ -580,8 +571,7 @@
                                                                                    rdf:type owl:Class
                                                                                  ] ;
                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                             owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> ,
-                                                                              <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
+                                                             owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
                                                                               <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
                                                                               <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
 
@@ -633,10 +623,7 @@
 
 ###  http://www.co-ode.org/ontologies/ont.owl#NamedCharacter
 <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
-                                                                           <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
-                                                                           <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#NightWalker
