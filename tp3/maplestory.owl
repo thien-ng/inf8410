@@ -849,6 +849,70 @@
 
 
 #################################################################
+#    Individuals
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player1
+<http://www.co-ode.org/ontologies/ont.owl#Player1> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#NightWalker> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "XxX_g4m3rpr0_XxX"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player10
+<http://www.co-ode.org/ontologies/ont.owl#Player10> rdf:type owl:NamedIndividual ,
+                                                             <http://www.co-ode.org/ontologies/ont.owl#Zero> ;
+                                                    <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "KonstantinoZ"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player2
+<http://www.co-ode.org/ontologies/ont.owl#Player2> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Mercedes> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "Sugoi"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player3
+<http://www.co-ode.org/ontologies/ont.owl#Player3> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Mercedes> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "xXDarkMasterXx"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player4
+<http://www.co-ode.org/ontologies/ont.owl#Player4> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#WildHunters> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "Xx_MLG_NoScoper360_xX"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player5
+<http://www.co-ode.org/ontologies/ont.owl#Player5> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Mechanics> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "Olyou"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player6
+<http://www.co-ode.org/ontologies/ont.owl#Player6> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Kaiser> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "GordonRamsey"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player7
+<http://www.co-ode.org/ontologies/ont.owl#Player7> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Cadena> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "Bob"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player8
+<http://www.co-ode.org/ontologies/ont.owl#Player8> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Adele> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "HelloWorld"^^xsd:string .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Player9
+<http://www.co-ode.org/ontologies/ont.owl#Player9> rdf:type owl:NamedIndividual ,
+                                                            <http://www.co-ode.org/ontologies/ont.owl#Illium> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#hasCharacterName> "3x4m3n-pr3s3nti3l"^^xsd:string .
+
+
+#################################################################
 #    General axioms
 #################################################################
 
@@ -931,6 +995,21 @@
                 <http://www.co-ode.org/ontologies/ont.owl#Offense>
                 <http://www.co-ode.org/ontologies/ont.owl#Utility>
               )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.co-ode.org/ontologies/ont.owl#Player1>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player10>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player2>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player3>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player4>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player5>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player6>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player7>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player8>
+                        <http://www.co-ode.org/ontologies/ont.owl#Player9>
+                      )
 ] .
 
 
