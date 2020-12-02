@@ -102,7 +102,9 @@
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                    owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#HighFiora>
-                                                                 ] .
+                                                                 ] ;
+                                                 rdfs:comment "An Adele is a High Flora warrior character. This character wears capes made for Adele only."@en ;
+                                                 rdfs:label "Adele"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#AdeleCape
@@ -111,7 +113,9 @@
                                                                      [ rdf:type owl:Restriction ;
                                                                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> ;
                                                                        owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Adele>
-                                                                     ] .
+                                                                     ] ;
+                                                     rdfs:comment "Capes that only Adele characters can wear. Used for defense."@en ;
+                                                     rdfs:label "Adele Cape"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Alliance
@@ -137,7 +141,9 @@
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                            owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Nova>
-                                                                         ] .
+                                                                         ] ;
+                                                         rdfs:comment "An Angelic Buster is a Nova bowman character and is part of the Nove. This character has a Unicorn as a pet."@en ;
+                                                         rdfs:label "Angelic Buster"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Anima
@@ -149,7 +155,9 @@
                                                                   <http://www.co-ode.org/ontologies/ont.owl#Human> ,
                                                                   <http://www.co-ode.org/ontologies/ont.owl#Nova> ,
                                                                   <http://www.co-ode.org/ontologies/ont.owl#Transcendent> ,
-                                                                  <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+                                                                  <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> ;
+                                                 rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                                 rdfs:label "Anima"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Ark
@@ -167,7 +175,9 @@
                                                                [ rdf:type owl:Restriction ;
                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                  owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#HighFiora>
-                                                               ] .
+                                                               ] ;
+                                               rdfs:comment "An Ark is a High Flora pirate character. It wears capes made for Ark only."@en ;
+                                               rdfs:label "Ark"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ArkCape
@@ -176,12 +186,16 @@
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> ;
                                                                      owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Ark>
-                                                                   ] .
+                                                                   ] ;
+                                                   rdfs:comment "Capes that only Ark characters can wear. Used for defense."@en ;
+                                                   rdfs:label "Ark Cape"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Armor
 <http://www.co-ode.org/ontologies/ont.owl#Armor> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> ;
+                                                 rdfs:comment "Overall body metallic protection. Used for defense."@en ;
+                                                 rdfs:label "Armor"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#AssetType
@@ -192,12 +206,16 @@
                                                                                          <http://www.co-ode.org/ontologies/ont.owl#Utility>
                                                                                        )
                                                                          ] ;
-                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ValuePartition> .
+                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#ValuePartition> ;
+                                                     rdfs:comment "Purpose of a character asset."@en ;
+                                                     rdfs:label "Asset Type"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Bear
 <http://www.co-ode.org/ontologies/ont.owl#Bear> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                                rdfs:comment "Bear pet that can attack."@en ;
+                                                rdfs:label "Bear"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#BlazeWizard
@@ -215,12 +233,16 @@
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Human>
-                                                                       ] .
+                                                                       ] ;
+                                                       rdfs:comment "A Blaze Wizard is a human magician character and is part of the Cygnus Knights. It possesses a special jewel given when promoted to Cygnus Knight."@en ;
+                                                       rdfs:label "Blaze Wizard"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Bow
 <http://www.co-ode.org/ontologies/ont.owl#Bow> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                               rdfs:comment "Weapon that can be used by bowman characters. Used for offense."@en ;
+                                               rdfs:label "Bow"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#BowmanCharacter
@@ -244,7 +266,9 @@
                                                            owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#MagicianCharacter> ,
                                                                             <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
                                                                             <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
-                                                                            <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
+                                                                            <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> ;
+                                                           rdfs:comment "A bowman character is a character that uses bows as weapons."@en ;
+                                                           rdfs:label "Bowman Character"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Cadena
@@ -262,22 +286,30 @@
                                                                   [ rdf:type owl:Restriction ;
                                                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                     owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Nova>
-                                                                  ] .
+                                                                  ] ;
+                                                  rdfs:comment "A Cadena is a Nova warrior character and is part of the Nove. This Character is usually distinguished by the use of chains as weapons."@en ;
+                                                  rdfs:label "Cadena"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Cape
 <http://www.co-ode.org/ontologies/ont.owl#Cape> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> ;
+                                                rdfs:comment "Piece of cloth worn around character's neck."@en ;
+                                                rdfs:label "Cape"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Cat
 <http://www.co-ode.org/ontologies/ont.owl#Cat> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                               rdfs:comment "Cat pet that can run."@en ;
+                                               rdfs:label "Cat"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Chain
 <http://www.co-ode.org/ontologies/ont.owl#Chain> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                                 rdfs:comment "Weapon that can only be used by Cadena characters. Used for offense."@en ;
+                                                 rdfs:label "Chain"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Character
@@ -324,17 +356,23 @@
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                    owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Anima>
-                                                                 ] .
+                                                                 ] ;
+                                                 rdfs:comment "A Chase is an Anima pirate character. It has a Cat, a Bear, a Hawk and a Leopard as pets."@en ;
+                                                 rdfs:label "Chase"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Claw
 <http://www.co-ode.org/ontologies/ont.owl#Claw> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                                rdfs:comment "Weapon that can be used by thief characters. Used for offense."@en ;
+                                                rdfs:label "Claw"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Crossbow
 <http://www.co-ode.org/ontologies/ont.owl#Crossbow> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                    rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                                    rdfs:comment "Weapon that can be used by bowman characters. Used for offense."@en ;
+                                                    rdfs:label "Crossbow"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#CygnusKnight
@@ -343,12 +381,16 @@
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAllyOf> ;
                                                                           owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Heroes>
-                                                                        ] .
+                                                                        ] ;
+                                                        rdfs:comment "Cygnus Knight"@en ,
+                                                                     "The Cygnus Knights are a team of special knights with the same goal: to protect the world."@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Defense
 <http://www.co-ode.org/ontologies/ont.owl#Defense> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> ;
+                                                   rdfs:comment "Used for defense/protection."@en ;
+                                                   rdfs:label "Defense"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Demon
@@ -359,7 +401,9 @@
                                                                   <http://www.co-ode.org/ontologies/ont.owl#Human> ,
                                                                   <http://www.co-ode.org/ontologies/ont.owl#Nova> ,
                                                                   <http://www.co-ode.org/ontologies/ont.owl#Transcendent> ,
-                                                                  <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+                                                                  <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> ;
+                                                 rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                                 rdfs:label "Demon"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#DemonSlayer
@@ -377,7 +421,9 @@
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Demon>
-                                                                       ] .
+                                                                       ] ;
+                                                       rdfs:comment "A Demon Slayer is a demon warrior character and is part of the Resistance. He has wings which let him glide around and travel faster."@en ;
+                                                       rdfs:label "Demon Slayer"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#DomainConcept
@@ -387,7 +433,9 @@
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dragon
 <http://www.co-ode.org/ontologies/ont.owl#Dragon> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                                  rdfs:comment "Dragon pet that can fly."@en ;
+                                                  rdfs:label "Dragon"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#DragonArmor
@@ -397,12 +445,16 @@
                                                                          owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> ;
                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Kaiser>
                                                                        ] ;
-                                                       owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#RobotArmor> .
+                                                       owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#RobotArmor> ;
+                                                       rdfs:comment "Overall body armor in the shape of a dragon. Used for defense."@en ;
+                                                       rdfs:label "Dragon Armor"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Dress
 <http://www.co-ode.org/ontologies/ont.owl#Dress> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> ;
+                                                 rdfs:comment "Flowy fabric overall. Used for defense."@en ;
+                                                 rdfs:label "Dress"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Elf
@@ -412,7 +464,9 @@
                                                                 <http://www.co-ode.org/ontologies/ont.owl#Human> ,
                                                                 <http://www.co-ode.org/ontologies/ont.owl#Nova> ,
                                                                 <http://www.co-ode.org/ontologies/ont.owl#Transcendent> ,
-                                                                <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+                                                                <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> ;
+                                               rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                               rdfs:label "Elf"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Equipment
@@ -424,7 +478,9 @@
                                                                      ] ;
                                                      owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Pet> ,
                                                                       <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> ,
-                                                                      <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                                     rdfs:comment "Equipment that can be worn by characters. Used for defense."@en ;
+                                                     rdfs:label "Equipment"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Evan
@@ -442,17 +498,23 @@
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                   owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Human>
-                                                                ] .
+                                                                ] ;
+                                                rdfs:comment "An Evan is a human magician character and is part of the Heroes. He will eventually acquire a pet dragon."@en ;
+                                                rdfs:label "Evan"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Gun
 <http://www.co-ode.org/ontologies/ont.owl#Gun> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                               rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                               rdfs:comment "Weapon that can be used by pirate characters. Used for offense."@en ;
+                                               rdfs:label "Gun"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Hawk
 <http://www.co-ode.org/ontologies/ont.owl#Hawk> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                                rdfs:comment "Hawk pet that can fly."@en ;
+                                                rdfs:label "Hawk"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Heroes
@@ -468,7 +530,9 @@
                                                                                          ]
                                                                                        ) ;
                                                                     rdf:type owl:Class
-                                                                  ] .
+                                                                  ] ;
+                                                  rdfs:comment "The Heroes are a group of characters that fought and brought peace to the world of Maple Story in the past. They have awoken with the same goal in mind."@en ;
+                                                  rdfs:label "Heroes"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#HighFiora
@@ -477,7 +541,9 @@
                                                      owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Human> ,
                                                                       <http://www.co-ode.org/ontologies/ont.owl#Nova> ,
                                                                       <http://www.co-ode.org/ontologies/ont.owl#Transcendent> ,
-                                                                      <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> ;
+                                                     rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                                     rdfs:label "High Fiora"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#HoYoung
@@ -491,7 +557,9 @@
                                                                    [ rdf:type owl:Restriction ;
                                                                      owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                      owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Anima>
-                                                                   ] .
+                                                                   ] ;
+                                                   rdfs:comment "A HoYoung is an Anima thief character"@en ;
+                                                   rdfs:label "HoYoung"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Human
@@ -499,7 +567,9 @@
                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Race> ;
                                                  owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Nova> ,
                                                                   <http://www.co-ode.org/ontologies/ont.owl#Transcendent> ,
-                                                                  <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+                                                                  <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> ;
+                                                 rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                                 rdfs:label "Human"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Illium
@@ -517,7 +587,9 @@
                                                                   [ rdf:type owl:Restriction ;
                                                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                     owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora>
-                                                                  ] .
+                                                                  ] ;
+                                                  rdfs:comment "An Illium is a Verdan Flora magician character. It wears capes made for Illium only."@en ;
+                                                  rdfs:label "Illium"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#IlliumCape
@@ -526,12 +598,16 @@
                                                                       [ rdf:type owl:Restriction ;
                                                                         owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> ;
                                                                         owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Illium>
-                                                                      ] .
+                                                                      ] ;
+                                                      rdfs:comment "Capes that only Illium characters can wear. Used for defense."@en ;
+                                                      rdfs:label "Illium Cape"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Jewel
 <http://www.co-ode.org/ontologies/ont.owl#Jewel> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> ;
+                                                 rdfs:comment "Jewel-like floaty rock. Used for defense."@en ;
+                                                 rdfs:label "Jewel"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Kaiser
@@ -553,12 +629,16 @@
                                                                   [ rdf:type owl:Restriction ;
                                                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                     owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Nova>
-                                                                  ] .
+                                                                  ] ;
+                                                  rdfs:comment "A Kaiser is a Nova warrior character and is part of the Nove. He wears red dragon armor."@en ;
+                                                  rdfs:label "Kaiser"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Leopard
 <http://www.co-ode.org/ontologies/ont.owl#Leopard> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                                   rdfs:comment "Leopard pet that can run."@en ;
+                                                   rdfs:label "Leopard"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#MagicianCharacter
@@ -574,12 +654,16 @@
                                                              rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
                                                              owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
                                                                               <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
-                                                                              <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
+                                                                              <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> ;
+                                                             rdfs:comment "A magician character is a character that uses a staff for their spells."@en ;
+                                                             rdfs:label "Magician Character"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mask
 <http://www.co-ode.org/ontologies/ont.owl#Mask> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> .
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Equipment> ;
+                                                rdfs:comment "Mask that hides the eyes. Used for defense."@en ;
+                                                rdfs:label "Mask"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mechanics
@@ -597,7 +681,9 @@
                                                                      [ rdf:type owl:Restriction ;
                                                                        owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                        owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Human>
-                                                                     ] .
+                                                                     ] ;
+                                                     rdfs:comment "A Mechanics is a human pirate character and is part of the Resistance. He uses a robot built by the resistance to fight."@en ;
+                                                     rdfs:label "Mechanics"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Mercedes
@@ -619,12 +705,16 @@
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                       owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Elf>
-                                                                    ] .
+                                                                    ] ;
+                                                    rdfs:comment "A Mercedes is an elf bowman character and is part of the Heroes. She wears a majestic dress at all times. She will eventually acquire a pet pegasus."@en ;
+                                                    rdfs:label "Mercedes"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#NamedCharacter
 <http://www.co-ode.org/ontologies/ont.owl#NamedCharacter> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> .
+                                                          rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
+                                                          rdfs:comment "Available characters that can be played with."@en ;
+                                                          rdfs:label "Named Character"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#NightWalker
@@ -646,39 +736,53 @@
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Human>
-                                                                       ] .
+                                                                       ] ;
+                                                       rdfs:comment "A Night Walker is a human thief character and is part of the Cygnus Knights. It possesses a jewel given when promoted to Cygnus Knight and a half black half white mask."@en ;
+                                                       rdfs:label "Night Walker"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Nova
 <http://www.co-ode.org/ontologies/ont.owl#Nova> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Race> ;
                                                 owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Transcendent> ,
-                                                                 <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+                                                                 <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> ;
+                                                rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                                rdfs:label "Nova"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Nove
 <http://www.co-ode.org/ontologies/ont.owl#Nove> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alliance> .
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alliance> ;
+                                                rdfs:comment "The Nove live in the same city and created a group to fight for their own people."@en ;
+                                                rdfs:label "Nove"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Offense
 <http://www.co-ode.org/ontologies/ont.owl#Offense> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> ;
+                                                   rdfs:comment "Used for attacking."@en ;
+                                                   rdfs:label "Offense"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Other
 <http://www.co-ode.org/ontologies/ont.owl#Other> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alliance> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alliance> ;
+                                                 rdfs:comment "It contains various smaller and less popular groupe of alliance within the Maplestory world."@en ;
+                                                 rdfs:label "Other"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Panther
 <http://www.co-ode.org/ontologies/ont.owl#Panther> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                                   rdfs:comment "Panther pet that can run."@en ;
+                                                   rdfs:label "Panther"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Pegasus
 <http://www.co-ode.org/ontologies/ont.owl#Pegasus> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                                   rdfs:comment "Pegasus pet that can jump high and run."@en ;
+                                                   rdfs:label "Pegasus"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Pet
@@ -689,7 +793,9 @@
                                                                  owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Utility>
                                                                ] ;
                                                owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> ,
-                                                                <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                                <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                               rdfs:comment "Special animals that accompany a character and offer utility functions."@en ;
+                                               rdfs:label "Pet"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait
@@ -714,7 +820,9 @@
                                                                                ] ;
                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
                                                            owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
-                                                                            <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
+                                                                            <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> ;
+                                                           rdfs:comment "A pirate character is a character that uses guns as weapons."@en ;
+                                                           rdfs:label "Pirate Character"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Race
@@ -728,7 +836,9 @@
                                                                       [ rdf:type owl:Restriction ;
                                                                         owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAllyOf> ;
                                                                         owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Heroes>
-                                                                      ] .
+                                                                      ] ;
+                                                      rdfs:comment "Resistance"@en ,
+                                                                   "The Resistance is a group of rebel forces against the current corrupted government."@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#RobotArmor
@@ -737,17 +847,23 @@
                                                                       [ rdf:type owl:Restriction ;
                                                                         owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> ;
                                                                         owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Mechanics>
-                                                                      ] .
+                                                                      ] ;
+                                                      rdfs:comment "Overall body armor in the shape of a robot. Used for defense."@en ;
+                                                      rdfs:label "Robot Armor"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Staff
 <http://www.co-ode.org/ontologies/ont.owl#Staff> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                                 rdfs:comment "Weapon that can be used by magician characters. Used for offense."@en ;
+                                                 rdfs:label "Staff"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Sword
 <http://www.co-ode.org/ontologies/ont.owl#Sword> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Weapon> ;
+                                                 rdfs:comment "Weapon that can be used by warrior characters. Used for offense."@en ;
+                                                 rdfs:label "Sword"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter
@@ -761,23 +877,31 @@
                                                                                 rdf:type owl:Class
                                                                               ] ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> .
+                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> ;
+                                                          rdfs:comment "A thief character is a character that uses claws as weapons."@en ;
+                                                          rdfs:label "Thief Character"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Transcendent
 <http://www.co-ode.org/ontologies/ont.owl#Transcendent> rdf:type owl:Class ;
                                                         rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Race> ;
-                                                        owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> .
+                                                        owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> ;
+                                                        rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                                        rdfs:label "Transcendent"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Unicorn
 <http://www.co-ode.org/ontologies/ont.owl#Unicorn> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> .
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Pet> ;
+                                                   rdfs:comment "Unicorn pet that can run."@en ;
+                                                   rdfs:label "Unicorn"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Utility
 <http://www.co-ode.org/ontologies/ont.owl#Utility> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
+                                                   rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#AssetType> ;
+                                                   rdfs:comment "Used for practical reasons."@en ;
+                                                   rdfs:label "Utility"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#ValuePartition
@@ -786,7 +910,9 @@
 
 ###  http://www.co-ode.org/ontologies/ont.owl#VerdantFiora
 <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Race> .
+                                                        rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Race> ;
+                                                        rdfs:comment "One of the 8 races in the world of MapleStory."@en ;
+                                                        rdfs:label "Verdant Fiora"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter
@@ -799,7 +925,9 @@
                                                                                                      ) ;
                                                                                   rdf:type owl:Class
                                                                                 ] ;
-                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> .
+                                                            rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Character> ;
+                                                            rdfs:comment "A warrior character is a character that can wield a sword."@en ;
+                                                            rdfs:label "Warrior Character"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Weapon
@@ -826,12 +954,16 @@
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                          owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Human>
-                                                                       ] .
+                                                                       ] ;
+                                                       rdfs:comment "A Wild hunter is a human bowman character and is part of the Resistance. He travels around with a panther who transports the owner faster."@en ;
+                                                       rdfs:label "Wild Hunters"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Wings
 <http://www.co-ode.org/ontologies/ont.owl#Wings> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> .
+                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#PhysicalTrait> ;
+                                                 rdfs:comment "Permanent wings on the back of the character. Useful for flying and gliding (utility)."@en ;
+                                                 rdfs:label "Wings"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Zero
@@ -845,7 +977,9 @@
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                   owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Transcendent>
-                                                                ] .
+                                                                ] ;
+                                                rdfs:comment "A Zero is a Transcendent warrior character."@en ;
+                                                rdfs:label "Zero"@en .
 
 
 #################################################################
