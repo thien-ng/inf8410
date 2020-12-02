@@ -894,6 +894,29 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Armor>
+                <http://www.co-ode.org/ontologies/ont.owl#Cape>
+                <http://www.co-ode.org/ontologies/ont.owl#Dress>
+                <http://www.co-ode.org/ontologies/ont.owl#Jewel>
+                <http://www.co-ode.org/ontologies/ont.owl#Mask>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Bear>
+                <http://www.co-ode.org/ontologies/ont.owl#Cat>
+                <http://www.co-ode.org/ontologies/ont.owl#Dragon>
+                <http://www.co-ode.org/ontologies/ont.owl#Hawk>
+                <http://www.co-ode.org/ontologies/ont.owl#Leopard>
+                <http://www.co-ode.org/ontologies/ont.owl#Panther>
+                <http://www.co-ode.org/ontologies/ont.owl#Pegasus>
+                <http://www.co-ode.org/ontologies/ont.owl#Unicorn>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( <http://www.co-ode.org/ontologies/ont.owl#Bow>
                 <http://www.co-ode.org/ontologies/ont.owl#Chain>
                 <http://www.co-ode.org/ontologies/ont.owl#Claw>
