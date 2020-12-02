@@ -123,7 +123,8 @@
                                                     rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
                                                     owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Character> ,
                                                                      <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
-                                                                     <http://www.co-ode.org/ontologies/ont.owl#Race> .
+                                                                     <http://www.co-ode.org/ontologies/ont.owl#Race> ;
+                                                    rdfs:label "Alliance"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#AngelicBuster
@@ -320,13 +321,15 @@
                                                                        owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Race>
                                                                      ] ;
                                                      owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
-                                                                      <http://www.co-ode.org/ontologies/ont.owl#Race> .
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#Race> ;
+                                                     rdfs:label "Character"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#CharacterAsset
 <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> rdf:type owl:Class ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
-                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Race> .
+                                                          owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Race> ;
+                                                          rdfs:label "CharacterAsset"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Chase
@@ -827,7 +830,8 @@
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Race
 <http://www.co-ode.org/ontologies/ont.owl#Race> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> .
+                                                rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
+                                                rdfs:label "Race"@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Resistance
