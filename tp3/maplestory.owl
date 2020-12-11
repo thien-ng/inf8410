@@ -329,6 +329,7 @@
 <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> rdf:type owl:Class ;
                                                           rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
                                                           owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Race> ;
+                                                          rdfs:comment "Asset that can be seen physically on a character"@en ;
                                                           rdfs:label "CharacterAsset"@en .
 
 
@@ -831,6 +832,7 @@
 ###  http://www.co-ode.org/ontologies/ont.owl#Race
 <http://www.co-ode.org/ontologies/ont.owl#Race> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#DomainConcept> ;
+                                                rdfs:comment "Race of a character"@en ;
                                                 rdfs:label "Race"@en .
 
 
