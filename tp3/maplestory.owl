@@ -16,7 +16,8 @@
 <http://www.co-ode.org/ontologies/ont.owl#hasAlliance> rdf:type owl:ObjectProperty ;
                                                        rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic> ;
                                                        rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                       rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Alliance> .
+                                                       rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Alliance> ;
+                                                       rdfs:comment "A Character has an alliance. Domain: Character. Range: Alliance" .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasAssetType
@@ -24,7 +25,8 @@
                                                         rdfs:subPropertyOf owl:topObjectProperty ;
                                                         rdf:type owl:FunctionalProperty ;
                                                         rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ;
-                                                        rdfs:range <http://www.co-ode.org/ontologies/ont.owl#AssetType> .
+                                                        rdfs:range <http://www.co-ode.org/ontologies/ont.owl#AssetType> ;
+                                                        rdfs:comment "A character asset has only one asset type. Domain: CharacterAsset. Range: AssetType. Characteristic: Functional" .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasCharacterAsset
@@ -32,13 +34,15 @@
                                                              rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic> ;
                                                              owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> ;
                                                              rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                             rdfs:range <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> .
+                                                             rdfs:range <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ;
+                                                             rdfs:comment "A Character has a character asset. Domain: Character. Range: CharacterAsset" .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic
 <http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic> rdf:type owl:ObjectProperty ;
                                                              rdfs:subPropertyOf owl:topObjectProperty ;
-                                                             rdf:type owl:TransitiveProperty .
+                                                             rdf:type owl:TransitiveProperty ;
+                                                             rdfs:comment "Something has a characteristic." .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasRace
@@ -46,7 +50,8 @@
                                                    rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#hasCharacteristic> ;
                                                    rdf:type owl:FunctionalProperty ;
                                                    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                   rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Race> .
+                                                   rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Race> ;
+                                                   rdfs:comment "A Character has only one race. Domain: Character. Range: Race. Characteristics: Functional." .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#isAllyOf
@@ -55,20 +60,23 @@
                                                     rdf:type owl:SymmetricProperty ,
                                                              owl:TransitiveProperty ;
                                                     rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Alliance> ;
-                                                    rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Alliance> .
+                                                    rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Alliance> ;
+                                                    rdfs:comment "An allance can be ally with another alliance. Not with itself. Domain: Alliance. Range: Alliance. Characteristics: Transitive, Symmetric, Irreflexive." .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#isAssetOf
 <http://www.co-ode.org/ontologies/ont.owl#isAssetOf> rdf:type owl:ObjectProperty ;
                                                      rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#isCharacteristicOf> ;
                                                      rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ;
-                                                     rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Character> .
+                                                     rdfs:range <http://www.co-ode.org/ontologies/ont.owl#Character> ;
+                                                     rdfs:comment "A character asset is the asset of a Character (not necessarily only one). Domain: CharacterAsset. Range: Character." .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#isCharacteristicOf
 <http://www.co-ode.org/ontologies/ont.owl#isCharacteristicOf> rdf:type owl:ObjectProperty ;
                                                               rdfs:subPropertyOf owl:topObjectProperty ;
-                                                              rdf:type owl:TransitiveProperty .
+                                                              rdf:type owl:TransitiveProperty ;
+                                                              rdfs:comment "Something is the characteristic of something else" .
 
 
 #################################################################
@@ -80,7 +88,8 @@
                                                             rdfs:subPropertyOf owl:topDataProperty ;
                                                             rdf:type owl:FunctionalProperty ;
                                                             rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Character> ;
-                                                            rdfs:range xsd:string .
+                                                            rdfs:range xsd:string ;
+                                                            rdfs:comment "A character only has one name. Domain: Character. Range: xsd:string. Characteristic: Functional." .
 
 
 #################################################################
@@ -103,7 +112,7 @@
                                                                    owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                    owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#HighFiora>
                                                                  ] ;
-                                                 rdfs:comment "An Adele is a High Flora warrior character. This character wears capes made for Adele only."@en ;
+                                                 rdfs:comment "An Adele is a High Flora warrior character. This character wears capes made for Adele only. It is part of a non-important alliance."@en ;
                                                  rdfs:label "Adele"@en .
 
 
@@ -124,6 +133,7 @@
                                                     owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#Character> ,
                                                                      <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
                                                                      <http://www.co-ode.org/ontologies/ont.owl#Race> ;
+                                                    rdfs:comment "An alliance is a group of characters that work together." ;
                                                     rdfs:label "Alliance"@en .
 
 
@@ -177,7 +187,7 @@
                                                                  owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                  owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#HighFiora>
                                                                ] ;
-                                               rdfs:comment "An Ark is a High Flora pirate character. It wears capes made for Ark only."@en ;
+                                               rdfs:comment "An Ark is a High Flora pirate character. It wears capes made for Ark only. It is part of a non-important alliance."@en ;
                                                rdfs:label "Ark"@en .
 
 
@@ -268,7 +278,7 @@
                                                                             <http://www.co-ode.org/ontologies/ont.owl#PirateCharacter> ,
                                                                             <http://www.co-ode.org/ontologies/ont.owl#ThiefCharacter> ,
                                                                             <http://www.co-ode.org/ontologies/ont.owl#WarriorCharacter> ;
-                                                           rdfs:comment "A bowman character is a character that uses bows as weapons."@en ;
+                                                           rdfs:comment "A bowman character is a Character that uses bows and crossbows as weapons."@en ;
                                                            rdfs:label "Bowman Character"@en .
 
 
@@ -322,7 +332,8 @@
                                                                      ] ;
                                                      owl:disjointWith <http://www.co-ode.org/ontologies/ont.owl#CharacterAsset> ,
                                                                       <http://www.co-ode.org/ontologies/ont.owl#Race> ;
-                                                     rdfs:label "Character"@en .
+                                                     rdfs:comment "A character is something that has a race." ;
+                                                     rdfs:label "Character" .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#CharacterAsset
@@ -361,7 +372,7 @@
                                                                    owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                    owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Anima>
                                                                  ] ;
-                                                 rdfs:comment "A Chase is an Anima pirate character. It has a Cat, a Bear, a Hawk and a Leopard as pets."@en ;
+                                                 rdfs:comment "A Chase is an Anima pirate character. It has a Cat, a Bear, a Hawk and a Leopard as pets. It is part of a non-important alliance."@en ;
                                                  rdfs:label "Chase"@en .
 
 
@@ -387,7 +398,7 @@
                                                                           owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Heroes>
                                                                         ] ;
                                                         rdfs:comment "Cygnus Knight"@en ,
-                                                                     "The Cygnus Knights are a team of special knights with the same goal: to protect the world."@en .
+                                                                     "The Cygnus Knights are a team of special knights with the same goal: to protect the world. They are an Alliance and are allies with the Heroes Alliance."@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#Defense
@@ -535,7 +546,7 @@
                                                                                        ) ;
                                                                     rdf:type owl:Class
                                                                   ] ;
-                                                  rdfs:comment "The Heroes are a group of characters that fought and brought peace to the world of Maple Story in the past. They have awoken with the same goal in mind."@en ;
+                                                  rdfs:comment "The Heroes are a group of characters that fought and brought peace to the world of Maple Story in the past. They have awoken with the same goal in mind. They are an Alliance and are allies with the Cygnus Knights and the Resistance alliances,"@en ;
                                                   rdfs:label "Heroes"@en .
 
 
@@ -562,7 +573,7 @@
                                                                      owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                      owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Anima>
                                                                    ] ;
-                                                   rdfs:comment "A HoYoung is an Anima thief character"@en ;
+                                                   rdfs:comment "A HoYoung is an Anima thief character. It is part of a non-important alliance."@en ;
                                                    rdfs:label "HoYoung"@en .
 
 
@@ -592,7 +603,7 @@
                                                                     owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                     owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#VerdantFiora>
                                                                   ] ;
-                                                  rdfs:comment "An Illium is a Verdan Flora magician character. It wears capes made for Illium only."@en ;
+                                                  rdfs:comment "An Illium is a Verdan Flora magician character. It wears capes made for Illium only. It is part of a non-important alliance."@en ;
                                                   rdfs:label "Illium"@en .
 
 
@@ -757,7 +768,7 @@
 ###  http://www.co-ode.org/ontologies/ont.owl#Nove
 <http://www.co-ode.org/ontologies/ont.owl#Nove> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alliance> ;
-                                                rdfs:comment "The Nove live in the same city and created a group to fight for their own people."@en ;
+                                                rdfs:comment "The Nove live in the same city and created a group to fight for their own people. They are an Alliance that doesn`t have any allies."@en ;
                                                 rdfs:label "Nove"@en .
 
 
@@ -771,7 +782,7 @@
 ###  http://www.co-ode.org/ontologies/ont.owl#Other
 <http://www.co-ode.org/ontologies/ont.owl#Other> rdf:type owl:Class ;
                                                  rdfs:subClassOf <http://www.co-ode.org/ontologies/ont.owl#Alliance> ;
-                                                 rdfs:comment "It contains various smaller and less popular groupe of alliance within the Maplestory world."@en ;
+                                                 rdfs:comment "Other represents various smaller and less popular groups of alliances within the Maplestory world. They are not allied with any popular alliances within the world."@en ;
                                                  rdfs:label "Other"@en .
 
 
@@ -844,7 +855,7 @@
                                                                         owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Heroes>
                                                                       ] ;
                                                       rdfs:comment "Resistance"@en ,
-                                                                   "The Resistance is a group of rebel forces against the current corrupted government."@en .
+                                                                   "The Resistance is a group of rebel forces against the current corrupted government. They are an Alliance and are allies with the Heroes alliance."@en .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#RobotArmor
@@ -984,7 +995,7 @@
                                                                   owl:onProperty <http://www.co-ode.org/ontologies/ont.owl#hasRace> ;
                                                                   owl:someValuesFrom <http://www.co-ode.org/ontologies/ont.owl#Transcendent>
                                                                 ] ;
-                                                rdfs:comment "A Zero is a Transcendent warrior character."@en ;
+                                                rdfs:comment "A Zero is a Transcendent warrior character. It is part of a non-important alliance."@en ;
                                                 rdfs:label "Zero"@en .
 
 
